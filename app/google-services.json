@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "539726708355",
+    "firebase_url": "https://wherenow-14c94.firebaseio.com",
+    "project_id": "wherenow-14c94",
+    "storage_bucket": "wherenow-14c94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539726708355:android:57b1cb57e68cb4aa",
+        "android_client_info": {
+          "package_name": "nci.wherenow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539726708355-slmg693gabqfts23g16hu8daot14i5p2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nci.wherenow",
+            "certificate_hash": "e71d72732f6ba81b9077c52464429f86246b8297"
+          }
+        },
+        {
+          "client_id": "539726708355-7l79lfd531m9on4ckgj5tcqqfdus74o7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv-dMW6dVnBZxYdRY3e_GqvCqcDeNJN0U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "539726708355-7l79lfd531m9on4ckgj5tcqqfdus74o7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

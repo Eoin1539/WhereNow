@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">WhereNow</string>
+    <string name="facebook_app_id">198859397369511</string>
+    <string name="fb_login_protocol_scheme">fb198859397369511</string>
+
+    <string name="search">Search</string>
+
+    <string-array name="cuisine">
+        <item name="cuisine">Fast Food</item>
+    </string-array>
+
+    <string-array name="price">
+        <item name="price">€€</item>
+    </string-array>
+
+    <string-array name="distance">
+        <item name="distance">&gt; 1Km</item>
+    </string-array>
+
+    <string-array name="duration">
+        <item name="duration">0-1 Hours</item>
+    </string-array>
+
+    <string name="google_maps_API_key">AIzaSyCFprFwGrWEuKpWZOh4qohtEz4yAzyL54Q</string>
+
+</resources>
