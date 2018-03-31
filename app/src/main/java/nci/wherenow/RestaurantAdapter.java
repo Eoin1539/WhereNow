@@ -1,8 +1,5 @@
 package nci.wherenow;
 
-/**
- * Created by Jamie on 13/03/2018.
- */
 
 import android.content.Context;
 import android.content.Intent;
@@ -47,9 +44,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         Restaurant Restaurant = restaurantList.get(position);
 
         holder.textViewTitle.setText(Restaurant.getTitle());
-        holder.textViewShortDesc.setText(Restaurant.getShortdesc());
-        holder.textViewRating.setText(String.valueOf(Restaurant.getRating()));
-        holder.textViewPrice.setText(String.valueOf(Restaurant.getPrice()));
+        holder.textViewAddress.setText(Restaurant.getAddress());
+        holder.textViewDistance.setText(String.valueOf(Restaurant.getDistance()));
+        holder.textViewDuration.setText(String.valueOf(Restaurant.getDuration()));
 
         holder.imageView.setImageDrawable((mCtx.getResources().getDrawable(Restaurant.getImage())));
     }
@@ -62,7 +59,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     class RestaurantViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
-        TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
+        TextView textViewTitle, textViewAddress, textViewDistance, textViewDuration;
 
 
         public RestaurantViewHolder(View itemView) {
@@ -70,9 +67,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
             imageView = itemView.findViewById(R.id.imageView);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
-            textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
-            textViewRating = itemView.findViewById(R.id.textViewRating);
-            textViewPrice = itemView.findViewById(R.id.textViewPrice);
+            textViewAddress = itemView.findViewById(R.id.textViewAddress);
+            textViewDistance = itemView.findViewById(R.id.textViewDistance);
+            textViewDuration = itemView.findViewById(R.id.textViewDuration);
         }
 
     }

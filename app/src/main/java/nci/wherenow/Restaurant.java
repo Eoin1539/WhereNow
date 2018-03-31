@@ -1,26 +1,22 @@
 package nci.wherenow;
 
-/**
- * Created by Jamie on 13/03/2018.
- */
-
 public class Restaurant {
 
 
     private int id;
     private String title;
-    private  String shortdesc;
-    private  String rating;
-    private  String price;
+    private  String address;
+    private  String distance;
+    private  String duration;
     private  int image;
 
 
-    public Restaurant(int id, String title, String shortdesc, String rating, String price, int image) {
+    public Restaurant(int id, String title, String address, String distance, String duration, int image) {
         this.id = id;
         this.title = title;
-        this.shortdesc = shortdesc;
-        this.rating = rating;
-        this.price = price;
+        this.address = address;
+        this.distance = distance;
+        this.duration = duration;
         this.image = image;
     }
 
@@ -32,16 +28,16 @@ public class Restaurant {
         return title;
     }
 
-    public  String getShortdesc() {
-        return shortdesc;
+    public  String getAddress() {
+        return address;
     }
 
-    public  String getRating() {
-        return rating;
+    public  String getDistance() {
+        return distance;
     }
 
-    public  String getPrice() {
-        return price;
+    public  String getDuration() {
+        return duration;
     }
 
     public  int getImage() {
