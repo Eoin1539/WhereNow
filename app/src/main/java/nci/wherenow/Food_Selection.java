@@ -1,8 +1,5 @@
 package nci.wherenow;
 
-/**
- * Created by Jamie on 13/03/2018.
- */
 
 import android.app.Activity;
 import android.os.Bundle;

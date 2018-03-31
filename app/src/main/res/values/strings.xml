@@ -7,18 +7,30 @@
 
     <string-array name="cuisine">
         <item name="cuisine">Fast Food</item>
+        <item name="cuisine">Chinese</item>
+        <item name="cuisine">Italian</item>
+        <item name="cuisine">Thai</item>
+        <item name="cuisine">Indian</item>
+        <item name="cuisine">Vegetarian</item>
+        <item name="cuisine">Seafood</item>
     </string-array>
 
     <string-array name="price">
+        <item name="price">€</item>
         <item name="price">€€</item>
+        <item name="price">€€€</item>
     </string-array>
 
     <string-array name="distance">
+        <item name="distance">&lt; 0.5Km</item>
+        <item name="distance">&lt; 1Km</item>
         <item name="distance">&gt; 1Km</item>
     </string-array>
 
     <string-array name="duration">
         <item name="duration">0-1 Hours</item>
+        <item name="duration">1-2 Hours</item>
+        <item name="duration">&gt; 2 Hours</item>
     </string-array>
 
     <string name="google_maps_API_key">AIzaSyCFprFwGrWEuKpWZOh4qohtEz4yAzyL54Q</string>
