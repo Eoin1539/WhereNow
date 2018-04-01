@@ -2,6 +2,7 @@ package nci.wherenow;
 
 
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -28,6 +29,23 @@ public class Food_Selection extends Activity implements AdapterView.OnItemSelect
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.food_selection);
+
+        try{
+
+            SQLiteDatabase myDB = this.openOrCreateDatabase("Restaurants",MODE_PRIVATE,null);
+
+            myDB.execSQL("CREATE TABLE IF NOT EXISTS restaurant (name VARCHAR(50), address VARCHAR(50), Latitude");
+
+        }
+
+        catch(Exception e){
+
+            e.printStackTrace();
+
+        }
+
+
+
 
         restaurantList = new ArrayList<>();
 
