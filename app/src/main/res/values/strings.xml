@@ -34,5 +34,6 @@
     </string-array>
 
     <string name="google_maps_API_key">AIzaSyCFprFwGrWEuKpWZOh4qohtEz4yAzyL54Q</string>
+    <string name="title_activity_social">Social</string>
 
 </resources>

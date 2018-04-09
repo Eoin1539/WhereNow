@@ -7,6 +7,19 @@
     tools:context="nci.wherenow.Activity_Account">
 
     <Button
+        android:id="@+id/mapsActivity"
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="mapActivity"
+        android:text="View locations on map"
+        app:layout_constraintBottom_toTopOf="@+id/Food_Selection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
         android:id="@+id/Food_Selection"
         android:layout_width="374dp"
         android:layout_height="wrap_content"
@@ -20,14 +33,15 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/MapsActivity"
+        android:id="@+id/SocialActivity"
         android:layout_width="374dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="64dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:onClick="mapActivity"
-        android:text="View locations on map"
+        android:onClick="socialSelection"
+        android:text="Social Section"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/Food_Selection"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -13,13 +13,18 @@ public class Activity_Account extends AppCompatActivity {
         setContentView(R.layout.activity__account);
     }
 
-    public void foodSelection (View view) {
+    public void foodSelection(View view) {
         Intent startNewActivity = new Intent(this, Food_Selection.class);
         startActivity(startNewActivity);
     }
 
-    public void mapActivity (View view) {
+    public void mapActivity(View view) {
         Intent startNewActivity = new Intent(this, MapsActivity.class);
+        startActivity(startNewActivity);
+    }
+
+    public void socialSelection(View view) {
+        Intent startNewActivity = new Intent(this, Social.class);
         startActivity(startNewActivity);
     }
 }
