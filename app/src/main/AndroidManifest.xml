@@ -48,6 +48,7 @@
         </activity>
         <activity android:name=".Activity_Account"></activity>
         <activity android:name=".Food_Selection"></activity>
+        <activity android:name=".Restaurant_Results"></activity>
         <activity android:name=".MapsActivity"></activity>
     </application>
 
