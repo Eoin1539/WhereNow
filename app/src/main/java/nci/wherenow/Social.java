@@ -46,29 +46,51 @@ public class Social extends AppCompatActivity {
     }
 
 
-    public void apiRequest() {
-        GraphRequest request = GraphRequest.newMeRequest(
+    public void apiRequest1(String id) {
+        GraphRequest request = GraphRequest.newGraphPathRequest(
                 AccessToken.getCurrentAccessToken(),
-                new GraphJSONObjectCallback() {
+                "/{" + id + "}/friends",
+                new GraphRequest.Callback() {
                     @Override
-                    public void onCompleted(
-                            JSONObject object,
-                            GraphResponse response) {
+                    public void onCompleted(GraphResponse response) {
                         JSONObject result = response.getJSONObject();
-                ///        JSONArray array = result.getJSONArray("array");
-                        try {
-                            String cunt = result.getString("id");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        String result1 = result.toString();
+                        String output = result.toString();
                         TextView view1 = (TextView) findViewById(R.id.text1);
-                        view1.setText(cunt);
-                        // Application code
+                        view1.setText((CharSequence) result);
+
                     }
                 });
-        Bundle parameters = new Bundle();
-        parameters.putString("fields", "id,name,link");
-        request.setParameters(parameters);
+
         request.executeAsync();
+
+}
+
+public void apiRequest(){
+    GraphRequest request = GraphRequest.newMeRequest(
+            AccessToken.getCurrentAccessToken(),
+            new GraphJSONObjectCallback() {
+                @Override
+                public void onCompleted(
+                        JSONObject object,
+                        GraphResponse response) {
+                    JSONObject result = response.getJSONObject();
+                    ///        JSONArray array = result.getJSONArray("array");
+                    String id = null;
+                    try {
+                        id = result.getString("id");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    ///String result1 = result.toString();
+               ///     TextView view1 = (TextView) findViewById(R.id.text1);
+                  ///  view1.setText(id);
+                    apiRequest1(id);
+
+                }
+            });
+    Bundle parameters = new Bundle();
+    parameters.putString("fields", "id,name,link");
+    request.setParameters(parameters);
+    request.executeAsync();
+
 }}
