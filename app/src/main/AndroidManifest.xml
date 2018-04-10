@@ -50,6 +50,8 @@
             android:label="Food"/>
         <activity android:name=".MapsActivity"
             />
+        <activity android:name=".Restaurant_Results"></activity>
+
         <activity
             android:name=".Social"
             android:label="@string/title_activity_social"

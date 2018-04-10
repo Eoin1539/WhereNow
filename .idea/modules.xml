@@ -3,9 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Interdisciplinary-Project.iml" filepath="$PROJECT_DIR$/Interdisciplinary-Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Interdisciplinary-Project.iml" filepath="$PROJECT_DIR$/Interdisciplinary-Project.iml" />
       <module fileurl="file://B:\AndroidApps\Interdisciplinary-Project\Interdisciplinary-Project.iml" filepath="B:\AndroidApps\Interdisciplinary-Project\Interdisciplinary-Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Interdisciplinary-Project.iml" filepath="$PROJECT_DIR$/.idea/Interdisciplinary-Project.iml" />
       <module fileurl="file://B:\AndroidApps\Interdisciplinary-Project\WhereNow.iml" filepath="B:\AndroidApps\Interdisciplinary-Project\WhereNow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
