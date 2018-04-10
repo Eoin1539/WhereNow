@@ -22,13 +22,10 @@
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id"
-            />
-
+            android:value="@string/facebook_app_id" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
 
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -46,10 +43,13 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_Account"></activity>
-        <activity android:name=".Food_Selection"></activity>
-        <activity android:name=".Restaurant_Results"></activity>
-        <activity android:name=".MapsActivity"></activity>
+        <activity android:name=".Activity_Account" />
+        <activity android:name=".Food_Selection" />
+        <activity android:name=".MapsActivity" />
+        <activity
+            android:name=".Social"
+            android:label="@string/title_activity_social"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
