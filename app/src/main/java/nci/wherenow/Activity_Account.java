@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Activity_Account extends AppCompatActivity {
 
@@ -29,26 +32,37 @@ public class Activity_Account extends AppCompatActivity {
 
             public void onClick (View view){
 
+                mAuth.signOut();
+
+                LoginManager.getInstance().logOut();
+
+                updateUI();
+
             }
 
         });
 
 
 
+    }
 
+    @Override
+    public void onStart(){
+        super.onStart();
 
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
+        if(currentUser == null){
+            updateUI();
+        }
+    }
 
+    private void updateUI(){
+        Toast.makeText(Activity_Account.this,"You are logged out", Toast.LENGTH_LONG).show();
 
-
-
-
-
-
-
-
-
-
+        Intent accountIntent = new Intent(Activity_Account.this, MainActivity.class);
+        startActivity(accountIntent);
+        finish();
     }
 
     public void foodSelection(View view) {
