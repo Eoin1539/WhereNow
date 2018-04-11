@@ -32,8 +32,9 @@ public class Activity_Account extends AppCompatActivity {
 
             public void onClick (View view){
 
-                mAuth.signOut();
 
+
+                LoginManager.getInstance().logOut();
 
                 updateUI();
 
