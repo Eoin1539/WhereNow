@@ -34,7 +34,6 @@ public class Activity_Account extends AppCompatActivity {
 
                 mAuth.signOut();
 
-                LoginManager.getInstance().logOut();
 
                 updateUI();
 
