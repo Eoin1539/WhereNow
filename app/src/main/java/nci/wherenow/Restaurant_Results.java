@@ -41,7 +41,7 @@ public class Restaurant_Results extends AppCompatActivity {
 
         restaurantList.add(
                 new Restaurant(
-                        1,
+                        2,
                         "SuperMacs",
                         "45/46 O'Connell Street, North City, Dublin 1 ",
                         "1.3 Km",
@@ -50,12 +50,39 @@ public class Restaurant_Results extends AppCompatActivity {
 
         restaurantList.add(
                 new Restaurant(
-                        1,
+                        3,
                         "Burger King",
                         "Jervis Shopping Centre, Mary Street, North City, Dublin",
                         "1.8 Km",
                         "30-45 Minutes",
                         R.drawable.burgerking));
+        restaurantList.add(
+                new Restaurant(
+                        4,
+                        "McDonalds",
+                        "62 O'Connell Street Upper, North City, Dublin 1",
+                        "1.3 Km",
+                        "30 Minutes",
+                        R.drawable.mcdonalds));
+
+        restaurantList.add(
+                new Restaurant(
+                        5,
+                        "SuperMacs",
+                        "45/46 O'Connell Street, North City, Dublin 1 ",
+                        "1.3 Km",
+                        "30-60 Minutes",
+                        R.drawable.supermacs));
+
+        restaurantList.add(
+                new Restaurant(
+                        6,
+                        "Burger King",
+                        "Jervis Shopping Centre, Mary Street, North City, Dublin",
+                        "1.8 Km",
+                        "30-45 Minutes",
+                        R.drawable.burgerking));
+
 
 
         restaurantAdapter = new RestaurantAdapter(this, restaurantList);

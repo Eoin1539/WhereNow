@@ -14,21 +14,29 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/loginbutton"
         android:text="Login with Facebook"
         android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="359dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circle_profile" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/circle_profile"
         android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/wnlogo"
+        android:layout_marginBottom="134dp"
 
-        />
+        android:layout_marginTop="25dp"
+        android:src="@drawable/wnlogo"
+        app:layout_constraintBottom_toTopOf="@+id/facebookBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
