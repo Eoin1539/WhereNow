@@ -75,6 +75,11 @@ public class Activity_Account extends AppCompatActivity {
         startActivity(startNewActivity);
     }
 
+    public void Socialbtn(View view) {
+        Intent startNewActivity = new Intent(this, Social.class);
+        startActivity(startNewActivity);
+    }
+
 
 
 
