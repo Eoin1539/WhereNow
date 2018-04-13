@@ -2,6 +2,7 @@ package nci.wherenow;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 import org.json.*;
@@ -49,15 +50,14 @@ public class Social extends AppCompatActivity {
     public void apiRequest1(String id) {
         GraphRequest request = GraphRequest.newGraphPathRequest(
                 AccessToken.getCurrentAccessToken(),
-                "/{" + id + "}/friends",
+                "/100025266171180/friends",
                 new GraphRequest.Callback() {
                     @Override
                     public void onCompleted(GraphResponse response) {
-                        JSONObject result = response.getJSONObject();
-                        String output = result.toString();
+                        JSONObject object = response.getJSONObject();
+                        Log.d("Cunt", object);
                         TextView view1 = (TextView) findViewById(R.id.text1);
-                        view1.setText((CharSequence) result);
-
+                        view1.setText("Fuck");
                     }
                 });
 
