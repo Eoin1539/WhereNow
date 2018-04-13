@@ -43,9 +43,15 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity_Account" />
-        <activity android:name=".Food_Selection" />
-        <activity android:name=".MapsActivity" />
+        <activity android:name=".Activity_Account"
+            android:label="Home"
+            />
+        <activity android:name=".Food_Selection"
+            android:label="Food"/>
+        <activity android:name=".MapsActivity"
+            />
+        <activity android:name=".Restaurant_Results"></activity>
+
         <activity
             android:name=".Social"
             android:label="@string/title_activity_social"
