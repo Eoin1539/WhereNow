@@ -55,7 +55,7 @@ public class Social extends AppCompatActivity {
                     @Override
                     public void onCompleted(GraphResponse response) {
                         JSONObject object = response.getJSONObject();
-                        Log.d("Cunt", String.valueOf(object));
+                        //Log.d("Cunt", object);
                         TextView view1 = (TextView) findViewById(R.id.text1);
                         view1.setText("Fuck");
                     }
