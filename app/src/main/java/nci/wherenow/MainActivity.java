@@ -13,6 +13,7 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -51,10 +52,9 @@ public class MainActivity extends AppCompatActivity {
         mFacebookBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
+                FacebookSdk.sdkInitialize(getApplicationContext());
                 mFacebookBtn.setEnabled(false);
-
-                LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("email", "public_profile"));
+                LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("email", "public_profile", "user_friends"));
                 LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                             mFacebookBtn.setEnabled(true);
                             updateUI();
                         } else {
-                            // If sign in fails, display a message to the user.
+                            // If sign in fails, display a messagein to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();

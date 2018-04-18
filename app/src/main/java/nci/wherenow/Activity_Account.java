@@ -76,14 +76,13 @@ public class Activity_Account extends AppCompatActivity {
     }
 
     public void Socialbtn(View view) {
-        Intent startNewActivity = new Intent(this, Social.class);
+        Intent startNewActivity = new Intent(this, RestaurantChat.class);
         startActivity(startNewActivity);
+    }
     }
 
 
 
-
-}
 
 
 

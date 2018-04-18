@@ -1,35 +1,30 @@
 package nci.wherenow;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.widget.TextView;
-
-import org.json.*;
-
-
-import com.facebook.AccessToken;
-import com.facebook.GraphRequest;
-import com.facebook.GraphRequest.GraphJSONObjectCallback;
-import com.facebook.GraphResponse;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import android.view.View;
+import android.widget.Button;
+import android.view.View.OnClickListener;
 
 
 
 public class Social extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        AccessToken accessToken = AccessToken.getCurrentAccessToken();
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social);
+        super.onCreate(savedInstanceState);
+        /*
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+
+
         createDatabase();
         TextView view1 = (TextView) findViewById(R.id.text1);
-        ///   String message = createDatabase().child[0]("Users");
+        ///   String messagein = createDatabase().child[0]("Users");
         ///   view1.setText(accessToken);
-        /// String message = myData;
-        // view1.setText(message);
+        /// String messagein = myData;
+        // view1.setText(messagein);
         ///   final public String token = accessToken.getToken();
         ///  view1.setText(token);
         apiRequest();
@@ -55,9 +50,9 @@ public class Social extends AppCompatActivity {
                     @Override
                     public void onCompleted(GraphResponse response) {
                         JSONObject object = response.getJSONObject();
-                        //Log.d("Cunt", object);
+                      ///  Log.d("Cunt", String.valueOf(object));
                         TextView view1 = (TextView) findViewById(R.id.text1);
-                        view1.setText("Fuck");
+                        view1.setText(String.valueOf(object));
                     }
                 });
 
@@ -92,5 +87,14 @@ public void apiRequest(){
     parameters.putString("fields", "id,name,link");
     request.setParameters(parameters);
     request.executeAsync();
+    */
 
-}}
+}
+
+    public void Socialbtn(View v) {
+        Intent startNewActivity = new Intent(this, RestaurantChat.class);
+        startActivity(startNewActivity);
+    }
+
+
+}
