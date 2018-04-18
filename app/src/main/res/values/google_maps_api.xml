@@ -15,5 +15,5 @@
     Once you have your key (it starts with "AIza"), replace the "google_maps_key"
     string in this file.
     -->
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCFprFwGrWEuKpWZOh4qohtEz4yAzyL54Q8B:38:BA:83:6F:1E:D7:65:7F:A0:F7:A7:83:2F:86:C5:57:CE:0C:14;com.robpercival.maplocationdemo</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBL_Iu-ygC0Oj5_8TEj1bBDd3FsWrO_WYc</string>
 </resources>

@@ -1,10 +1,7 @@
-package nci.wherenow;
-
-/**
+package nci.wherenow; /**
  * Created by Jamie on 13/03/2018.
  */
 
-import android.*;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -12,12 +9,11 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -89,16 +85,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
 
-                LatLng mcdonalds = new LatLng(53.3494184, -6.2604797);
-                LatLng supermacs = new LatLng(53.3482789, -6.2613237);
-                LatLng bk = new LatLng(53.347915, -6.2659313);
-
                 mMap.clear();
                 mMap.addMarker(new MarkerOptions().position(userLocation).title("Your Location"));
-                mMap.addMarker(new MarkerOptions().position(mcdonalds).title("McDonalds"));
-                mMap.addMarker(new MarkerOptions().position(supermacs).title("SuperMacs"));
-                mMap.addMarker(new MarkerOptions().position(bk).title("Burge King"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(userLocation));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15));
 
 
             }
@@ -150,6 +140,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 mMap.addMarker(new MarkerOptions().position(userLocation).title("Your Location"));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(userLocation));
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15));
 
 
             }
