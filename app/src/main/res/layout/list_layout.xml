@@ -51,7 +51,8 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/newSection"/>
 
             <TextView
                 android:id="@+id/textViewDuration"
