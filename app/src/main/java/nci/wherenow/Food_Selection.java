@@ -67,7 +67,7 @@ public class Food_Selection extends AppCompatActivity implements AdapterView.OnI
     }
 
 
-    //Creating Button Click to hide spinners after filter has been chosen
+    //Creating Button Click to start new activity after filter has been chosen
 
     public void btnClicked (View v){
         Intent startNewActivity = new Intent (this, Restaurant_Results.class);

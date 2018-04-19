@@ -11,36 +11,51 @@ public class Restaurant {
     private  int image;
 
 
-    public Restaurant(int id, String title, String address, String distance, String duration, int image) {
-        this.id = id;
-        this.title = title;
-        this.address = address;
-        this.distance = distance;
-        this.duration = duration;
-        this.image = image;
-    }
-
     public int getId() {
         return id;
     }
 
-    public  String getTitle() {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
         return title;
     }
 
-    public  String getAddress() {
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAddress() {
         return address;
     }
 
-    public  String getDistance() {
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDistance() {
         return distance;
     }
 
-    public  String getDuration() {
+    public void setDistance(String distance) {
+        this.distance = distance;
+    }
+
+    public String getDuration() {
         return duration;
     }
 
-    public  int getImage() {
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public int getImage() {
         return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 }

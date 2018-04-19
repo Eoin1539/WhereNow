@@ -6,6 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,79 +20,63 @@ public class Restaurant_Results extends AppCompatActivity {
     RecyclerView rv;
     RestaurantAdapter restaurantAdapter;
     List<Restaurant> restaurantList;
+    FirebaseDatabase FDB;
+    DatabaseReference DBR;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurant_results);
 
-        restaurantList = new ArrayList<>();
-
 
         //Recognising IDs from activity_main.xml for further use
         rv = findViewById(R.id.recyclerView);
-
-
+        RecyclerView.LayoutManager LM = new LinearLayoutManager(getApplicationContext());
+        rv.setLayoutManager(LM);
         rv.setHasFixedSize(true);
-        rv.setLayoutManager(new LinearLayoutManager(this));
 
-        restaurantList.add(
-                new Restaurant(
-                        1,
-                        "McDonalds",
-                        "62 O'Connell Street Upper, North City, Dublin 1",
-                        "1.3 Km",
-                        "30 Minutes",
-                        R.drawable.mcdonalds));
+        restaurantList = new ArrayList<>();
+        restaurantAdapter = new RestaurantAdapter(restaurantList);
 
-        restaurantList.add(
-                new Restaurant(
-                        2,
-                        "SuperMacs",
-                        "45/46 O'Connell Street, North City, Dublin 1 ",
-                        "1.3 Km",
-                        "30-60 Minutes",
-                        R.drawable.supermacs));
+        FDB = FirebaseDatabase.getInstance();
+        GetDataFirebase();
+    }
 
-        restaurantList.add(
-                new Restaurant(
-                        3,
-                        "Burger King",
-                        "Jervis Shopping Centre, Mary Street, North City, Dublin",
-                        "1.8 Km",
-                        "30-45 Minutes",
-                        R.drawable.burgerking));
-        restaurantList.add(
-                new Restaurant(
-                        4,
-                        "McDonalds",
-                        "62 O'Connell Street Upper, North City, Dublin 1",
-                        "1.3 Km",
-                        "30 Minutes",
-                        R.drawable.mcdonalds));
+    void GetDataFirebase(){
 
-        restaurantList.add(
-                new Restaurant(
-                        5,
-                        "SuperMacs",
-                        "45/46 O'Connell Street, North City, Dublin 1 ",
-                        "1.3 Km",
-                        "30-60 Minutes",
-                        R.drawable.supermacs));
+        DBR = FDB.getReference("recyclerview");
+        DBR.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dS, String s) {
+                Restaurant restaurant = new Restaurant();
+                restaurant = dS.getValue(Restaurant.class);
 
-        restaurantList.add(
-                new Restaurant(
-                        6,
-                        "Burger King",
-                        "Jervis Shopping Centre, Mary Street, North City, Dublin",
-                        "1.8 Km",
-                        "30-45 Minutes",
-                        R.drawable.burgerking));
+                restaurantList.add(restaurant);
 
+                rv.setAdapter(restaurantAdapter);
+            }
 
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-        restaurantAdapter = new RestaurantAdapter(this, restaurantList);
-        rv.setAdapter(restaurantAdapter);
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
     }
 }
