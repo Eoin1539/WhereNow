@@ -8,6 +8,7 @@ public class Restaurant {
     private  String address;
     private  String cuisine;
     private  String duration;
+    private String PriceRange;
     private  String image;
 
     public int getId() {
@@ -48,6 +49,14 @@ public class Restaurant {
 
     public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+    public String getPriceRange() {
+        return PriceRange;
+    }
+
+    public void setPriceRange(String priceRange) {
+        this.PriceRange = PriceRange;
     }
 
     public String getImage() {

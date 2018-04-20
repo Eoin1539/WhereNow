@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Food_Selection extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    Spinner cuisineSpinner, priceSpinner, distanceSpinner, durationSpinner;
+    Spinner cuisineSpinner, priceSpinner, durationSpinner;
     ArrayAdapter adapter;
     Button btn;
 
@@ -54,13 +54,6 @@ public class Food_Selection extends AppCompatActivity implements AdapterView.OnI
         durationSpinner.setAdapter(adapter);
         durationSpinner.setOnItemSelectedListener(Food_Selection.this);
 
-        //Importing Distance into the Distance Spinner
-        adapter = ArrayAdapter.createFromResource(this, R.array.distance, android.R.layout.simple_spinner_dropdown_item);
-
-        distanceSpinner = findViewById(R.id.distanceSpinner);
-        distanceSpinner.setAdapter(adapter);
-        distanceSpinner.setOnItemSelectedListener(Food_Selection.this);
-
     }
 
     @Override
@@ -73,8 +66,12 @@ public class Food_Selection extends AppCompatActivity implements AdapterView.OnI
 
     public void btnClicked (View v){
         String cuisine = cuisineSpinner.getSelectedItem().toString();
+        String priceRange = priceSpinner.getSelectedItem().toString();
+
+
         Intent i = new Intent (this, Restaurant_Results.class);
         i.putExtra("cuisine", cuisine);
+        i.putExtra("priceRange", priceRange);
 
 
         startActivity(i);

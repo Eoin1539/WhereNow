@@ -10,21 +10,20 @@
         <item name="cuisine">Chinese</item>
         <item name="cuisine">Italian</item>
         <item name="cuisine">Thai</item>
-        <item name="cuisine">Indian</item>
-        <item name="cuisine">Vegetarian</item>
+        <item name="cuisine">Cafe</item>
+        <item name="cuisine">Mexican</item>
+        <item name="cuisine">Korean</item>
+        <item name="cuisine">Bar and Restaurant</item>
+        <item name="cuisine">French</item>
+        <item name="cuisine">European</item>
         <item name="cuisine">Seafood</item>
+        <item name="cuisine">Healthy</item>
     </string-array>
 
     <string-array name="price">
         <item name="price">€</item>
         <item name="price">€€</item>
         <item name="price">€€€</item>
-    </string-array>
-
-    <string-array name="distance">
-        <item name="distance">&lt; 0.5Km</item>
-        <item name="distance">&lt; 1Km</item>
-        <item name="distance">&gt; 1Km</item>
     </string-array>
 
     <string-array name="duration">
