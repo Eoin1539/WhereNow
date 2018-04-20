@@ -43,7 +43,7 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.BarViewHolder>{
 
         holder.textViewTitle.setText(Bar.getTitle());
         holder.textViewAddress.setText(Bar.getAddress());
-        holder.textViewDistance.setText(String.valueOf(Bar.getDistance()));
+       // holder.textViewDistance.setText(String.valueOf(Bar.getDistance()));
         holder.textViewDuration.setText(String.valueOf(Bar.getDuration()));
 
         holder.imageView.setImageDrawable((mCtx.getResources().getDrawable(Bar.getImage())));
@@ -66,7 +66,7 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.BarViewHolder>{
             imageView = itemView.findViewById(R.id.imageView);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewAddress = itemView.findViewById(R.id.textViewAddress);
-            textViewDistance = itemView.findViewById(R.id.textViewDistance);
+            //textViewDistance = itemView.findViewById(R.id.textViewDistance);
             textViewDuration = itemView.findViewById(R.id.textViewDuration);
         }
 

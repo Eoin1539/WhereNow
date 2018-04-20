@@ -55,7 +55,7 @@ public class Restaurant {
         return PriceRange;
     }
 
-    public void setPriceRange(String priceRange) {
+    public void setPriceRange(String PriceRange) {
         this.PriceRange = PriceRange;
     }
 

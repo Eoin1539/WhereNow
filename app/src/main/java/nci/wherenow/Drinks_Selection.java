@@ -53,12 +53,12 @@ public class Drinks_Selection extends AppCompatActivity implements AdapterView.O
         durationSpinner.setAdapter(adapter);
         durationSpinner.setOnItemSelectedListener(Drinks_Selection.this);
 
-        //Importing Distance into the Distance Spinner
+        /*//Importing Distance into the Distance Spinner
         adapter = ArrayAdapter.createFromResource(this, R.array.distance, android.R.layout.simple_spinner_dropdown_item);
 
         distanceSpinner = findViewById(R.id.distanceSpinner);
         distanceSpinner.setAdapter(adapter);
-        distanceSpinner.setOnItemSelectedListener(Drinks_Selection.this);
+        distanceSpinner.setOnItemSelectedListener(Drinks_Selection.this);*/
 
     }
 

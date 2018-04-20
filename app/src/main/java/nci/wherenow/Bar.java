@@ -5,7 +5,7 @@ public class Bar {
     private int id;
     private String title;
     private  String address;
-    private  String distance;
+    //private  String distance;
     private  String duration;
     private  int image;
 
@@ -14,7 +14,7 @@ public class Bar {
         this.id = id;
         this.title = title;
         this.address = address;
-        this.distance = distance;
+       // this.distance = distance;
         this.duration = duration;
         this.image = image;
     }
@@ -31,9 +31,9 @@ public class Bar {
         return address;
     }
 
-    public  String getDistance() {
+    /*public  String getDistance() {
         return distance;
-    }
+    }*/
 
     public  String getDuration() {
         return duration;
