@@ -6,7 +6,7 @@ public class Restaurant {
     private int id;
     private String title;
     private  String address;
-    private  String distance;
+    private  String cuisine;
     private  String duration;
     private  String image;
 
@@ -34,12 +34,12 @@ public class Restaurant {
         this.address = address;
     }
 
-    public String getDistance() {
-        return distance;
+    public String getCuisine() {
+        return cuisine;
     }
 
-    public void setDistance(String distance) {
-        this.distance = distance;
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
     }
 
     public String getDuration() {

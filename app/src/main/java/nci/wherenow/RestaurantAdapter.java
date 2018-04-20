@@ -1,26 +1,22 @@
 package nci.wherenow;
 
 
+
 import android.content.Context;
-import android.content.Intent;
-import android.media.Image;
-import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.fitness.data.Goal;
 
 import java.util.List;
 
 public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>{
 
     List<Restaurant> restaurantList;
+    Context context;
 
     public RestaurantAdapter(List<Restaurant> restaurantList) {
 
@@ -40,7 +36,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
         holder.title.setText(restaurant.getTitle());
         holder.address.setText(restaurant.getAddress());
-        holder.distance.setText(restaurant.getDistance());
+        holder.cuisine.setText(restaurant.getCuisine());
         holder.duration.setText(restaurant.getDuration());
         //holder.image.setImageURI(restaurant.getImage());
 
@@ -52,7 +48,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     public class RestaurantViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title, address, distance, duration;
+        TextView title, address, cuisine, duration;
         ImageView image;
 
         public RestaurantViewHolder(View itemView) {
@@ -60,7 +56,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
             title = (TextView)itemView.findViewById(R.id.textViewTitle);
             address = (TextView)itemView.findViewById(R.id.textViewAddress);
-            distance = (TextView)itemView.findViewById(R.id.textViewDistance);
+            cuisine = (TextView)itemView.findViewById(R.id.textViewCuisine);
             duration = (TextView)itemView.findViewById(R.id.textViewDuration);
             image = (ImageView)itemView.findViewById(R.id.imageView);
 

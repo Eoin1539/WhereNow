@@ -23,12 +23,14 @@ public class Restaurant_Results extends AppCompatActivity {
     FirebaseDatabase FDB;
     DatabaseReference DBR;
 
+    String cuisine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurant_results);
 
+        cuisine = getIntent().getStringExtra("cuisine");
 
         //Recognising IDs from activity_main.xml for further use
         rv = findViewById(R.id.recyclerView);
@@ -49,10 +51,12 @@ public class Restaurant_Results extends AppCompatActivity {
         DBR.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dS, String s) {
-                Restaurant restaurant = new Restaurant();
-                restaurant = dS.getValue(Restaurant.class);
+                Restaurant restaurant = dS.getValue(Restaurant.class);
+                if(cuisine.equals(restaurant.getCuisine())){
 
-                restaurantList.add(restaurant);
+                    restaurantList.add(restaurant);
+
+                }
 
                 rv.setAdapter(restaurantAdapter);
             }

@@ -20,6 +20,8 @@ public class Food_Selection extends AppCompatActivity implements AdapterView.OnI
 
     List<Restaurant> restaurantList;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,8 +72,14 @@ public class Food_Selection extends AppCompatActivity implements AdapterView.OnI
     //Creating Button Click to start new activity after filter has been chosen
 
     public void btnClicked (View v){
-        Intent startNewActivity = new Intent (this, Restaurant_Results.class);
-        startActivity(startNewActivity);
+        String cuisine = cuisineSpinner.getSelectedItem().toString();
+        Intent i = new Intent (this, Restaurant_Results.class);
+        i.putExtra("cuisine", cuisine);
+
+
+        startActivity(i);
+
+
     }
 
 
