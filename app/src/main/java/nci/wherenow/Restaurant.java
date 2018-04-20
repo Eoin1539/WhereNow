@@ -8,8 +8,16 @@ public class Restaurant {
     private  String address;
     private  String distance;
     private  String duration;
-    private  int image;
+    private  String image;
 
+    public Restaurant(int id, String title, String address, String distance, String duration, String image) {
+        this.id = id;
+        this.title = title;
+        this.address = address;
+        this.distance = distance;
+        this.duration = duration;
+        this.image = image;
+    }
 
     public int getId() {
         return id;
@@ -51,11 +59,11 @@ public class Restaurant {
         this.duration = duration;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 }
