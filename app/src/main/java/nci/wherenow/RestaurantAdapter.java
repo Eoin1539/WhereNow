@@ -17,16 +17,18 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-
-
 public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>{
 
     List<Restaurant> restaurantList;
     Context context;
 
+
+
+
     public RestaurantAdapter(List<Restaurant> restaurantList) {
 
         this.restaurantList = restaurantList;
+
     }
 
     @Override
