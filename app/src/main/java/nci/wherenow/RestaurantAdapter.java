@@ -25,12 +25,14 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     public RestaurantAdapter(List<Restaurant> restaurantList) {
 
         this.restaurantList = restaurantList;
+        Context context;
     }
 
     @Override
     public RestaurantAdapter.RestaurantViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_layout, parent, false);
+        context = parent.getContext();
         return new RestaurantViewHolder(view);
     }
 
