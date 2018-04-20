@@ -38,6 +38,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         holder.address.setText(restaurant.getAddress());
         holder.cuisine.setText(restaurant.getCuisine());
         holder.duration.setText(restaurant.getDuration());
+        holder.priceRange.setText(restaurant.getPriceRange());
         //holder.image.setImageURI(restaurant.getImage());
 
 
@@ -48,7 +49,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     public class RestaurantViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title, address, cuisine, duration;
+        TextView title, address, cuisine, duration, priceRange;
         ImageView image;
 
         public RestaurantViewHolder(View itemView) {
@@ -58,6 +59,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
             address = (TextView)itemView.findViewById(R.id.textViewAddress);
             cuisine = (TextView)itemView.findViewById(R.id.textViewCuisine);
             duration = (TextView)itemView.findViewById(R.id.textViewDuration);
+            priceRange = (TextView)itemView.findViewById(R.id.textViewPriceRange);
             image = (ImageView)itemView.findViewById(R.id.imageView);
 
         }

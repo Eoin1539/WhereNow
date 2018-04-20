@@ -71,8 +71,6 @@ public class Food_Selection extends AppCompatActivity implements AdapterView.OnI
 
         Intent i = new Intent (this, Restaurant_Results.class);
         i.putExtra("cuisine", cuisine);
-        i.putExtra("priceRange", priceRange);
-
 
         startActivity(i);
 

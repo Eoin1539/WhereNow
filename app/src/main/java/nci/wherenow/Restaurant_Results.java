@@ -32,7 +32,6 @@ public class Restaurant_Results extends AppCompatActivity {
         setContentView(R.layout.restaurant_results);
 
         cuisine = getIntent().getStringExtra("cuisine");
-        priceRange = getIntent().getStringExtra("priceRange");
 
         //Recognising IDs from activity_main.xml for further use
         rv = findViewById(R.id.recyclerView);
@@ -56,7 +55,6 @@ public class Restaurant_Results extends AppCompatActivity {
                 Restaurant restaurant = dS.getValue(Restaurant.class);
                 if(cuisine.equals(restaurant.getCuisine())){
                     restaurantList.add(restaurant);
-
                 }
 
                 rv.setAdapter(restaurantAdapter);
