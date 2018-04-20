@@ -10,8 +10,6 @@ public class Restaurant {
     private  String duration;
     private String PriceRange;
     private  String image;
-    private String Latitude;
-    private String Longitude;
 
     public int getId() {
         return id;
@@ -68,12 +66,4 @@ public class Restaurant {
     public void setImage(String image) {
         this.image = image;
     }
-
-    public String getlatitude() { return Latitude; }
-
-    public void  setlatitude(String Latitude) { this.Latitude = Latitude; }
-
-    public String getlongitude() { return Longitude; }
-
-    public void  setlongitude(String Longitude) { this.Longitude = Longitude; }
 }

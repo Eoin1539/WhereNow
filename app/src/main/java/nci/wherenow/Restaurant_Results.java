@@ -1,10 +1,12 @@
 package nci.wherenow;
 
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -24,12 +26,12 @@ public class Restaurant_Results extends AppCompatActivity {
     DatabaseReference DBR;
 
     String cuisine;
-    String priceRange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurant_results);
+
 
         cuisine = getIntent().getStringExtra("cuisine");
 
@@ -38,6 +40,7 @@ public class Restaurant_Results extends AppCompatActivity {
         RecyclerView.LayoutManager LM = new LinearLayoutManager(getApplicationContext());
         rv.setLayoutManager(LM);
         rv.setHasFixedSize(true);
+
 
         restaurantList = new ArrayList<>();
         restaurantAdapter = new RestaurantAdapter(restaurantList);
