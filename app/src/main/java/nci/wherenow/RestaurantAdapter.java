@@ -15,12 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.fitness.data.Goal;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import static com.facebook.FacebookSdk.getApplicationContext;
-
 
 public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>{
 
@@ -46,7 +42,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         holder.address.setText(restaurant.getAddress());
         holder.distance.setText(restaurant.getDistance());
         holder.duration.setText(restaurant.getDuration());
-        holder.image.setImageURI(restaurant.getImage());
+        //holder.image.setImageURI(restaurant.getImage());
 
 
        // holder.imageView.setImageDrawable((mCtx.getResources().getDrawable(Restaurant.getImage())));

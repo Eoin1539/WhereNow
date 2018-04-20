@@ -39,7 +39,6 @@ public class Restaurant_Results extends AppCompatActivity {
         restaurantList = new ArrayList<>();
         restaurantAdapter = new RestaurantAdapter(restaurantList);
 
-
         FDB = FirebaseDatabase.getInstance();
         GetDataFirebase();
     }

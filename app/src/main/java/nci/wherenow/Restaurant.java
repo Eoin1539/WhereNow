@@ -10,15 +10,6 @@ public class Restaurant {
     private  String duration;
     private  String image;
 
-    public Restaurant(int id, String title, String address, String distance, String duration, String image) {
-        this.id = id;
-        this.title = title;
-        this.address = address;
-        this.distance = distance;
-        this.duration = duration;
-        this.image = image;
-    }
-
     public int getId() {
         return id;
     }
