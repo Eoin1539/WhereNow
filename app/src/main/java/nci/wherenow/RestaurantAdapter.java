@@ -3,6 +3,7 @@ package nci.wherenow;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +36,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     public RestaurantAdapter.RestaurantViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_layout, parent, false);
+        context = parent.getContext();
         return new RestaurantViewHolder(view);
     }
 
@@ -47,6 +49,8 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         holder.cuisine.setText(restaurant.getCuisine());
         holder.duration.setText(restaurant.getDuration());
         holder.PriceRange.setText(restaurant.getPriceRange());
+        // holder.Latitude.setText(restaurant.getlatitude());
+        // holder.Longitude.setText(restaurant.getlongitude());
         //Picasso.with(context).load(restaurantList.get(position).getImage()).resize(120, 90).into(holder.image);
 
 
@@ -54,6 +58,11 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "You clicked "+restaurant.getTitle(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(context, GalleryActivity.class);
+                intent.putExtra("restaurantTitle", restaurant.getTitle());
+                intent.putExtra("restaurantLatitude", restaurant.getlatitude());
+                intent.putExtra("restaurantLongitude", restaurant.getlongitude());
+                context.startActivity(intent);
             }
         });
     }
