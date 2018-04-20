@@ -61,6 +61,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RestaurantChat" />
         <activity android:name=".BarChat" />
+        <activity android:name=".GalleryActivity" />
     </application>
 
 </manifest>
