@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/restaurantTitle"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/restaurantLatitude"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Latitude"
+        android:textSize="20sp"
+        android:textColor="#000"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/restaurantLongitude"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Longitude"
+        android:textSize="20sp"
+        android:textColor="#000"
+        />
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_margin="2dp"/>
+
+
+</LinearLayout>

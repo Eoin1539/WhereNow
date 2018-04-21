@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="nci.wherenow">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 
     <application
         android:allowBackup="true"
@@ -25,7 +27,9 @@
             android:value="@string/facebook_app_id" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="@string/google_maps_key"
+        />
+
 
         <activity
             android:name="com.facebook.FacebookActivity"
@@ -49,13 +53,19 @@
         <activity
             android:name=".Food_Selection"
             android:label="Food" />
+        <activity
+            android:name=".Drinks_Selection"
+            android:label="Drinks" />
         <activity android:name=".MapsActivity" />
         <activity android:name=".Restaurant_Results" />
+        <activity android:name=".Bar_Results" />
         <activity
             android:name=".Social"
             android:label="@string/title_activity_social"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RestaurantChat" />
+        <activity android:name=".BarChat" />
+        <activity android:name=".GalleryActivity" />
     </application>
 
 </manifest>

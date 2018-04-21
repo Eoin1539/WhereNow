@@ -17,24 +17,24 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Restaurant_Results extends AppCompatActivity {
+public class Bar_Results extends AppCompatActivity {
 
     RecyclerView rv;
-    RestaurantAdapter restaurantAdapter;
-    List<Restaurant> restaurantList;
+    BarAdapter barAdapter;
+    List<Bar> barList;
     FirebaseDatabase FDB;
     DatabaseReference DBR;
 
-    String cuisine;
+    String barStyle;
     String priceRange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.restaurant_results);
+        setContentView(R.layout.bar_results);
 
 
-        cuisine = getIntent().getStringExtra("cuisine");
+        barStyle = getIntent().getStringExtra("barStyle");
         priceRange = getIntent().getStringExtra("priceRange");
 
         //Recognising IDs from activity_main.xml for further use
@@ -44,8 +44,8 @@ public class Restaurant_Results extends AppCompatActivity {
         rv.setHasFixedSize(true);
 
 
-        restaurantList = new ArrayList<>();
-        restaurantAdapter = new RestaurantAdapter(restaurantList);
+        barList = new ArrayList<>();
+        barAdapter = new BarAdapter(barList);
 
         FDB = FirebaseDatabase.getInstance();
         GetDataFirebase();
@@ -53,19 +53,19 @@ public class Restaurant_Results extends AppCompatActivity {
 
     void GetDataFirebase(){
 
-        DBR = FDB.getReference("recyclerview");
+        DBR = FDB.getReference("barRecycler");
         DBR.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dS, String s) {
-                Restaurant restaurant = dS.getValue(Restaurant.class);
-                if(cuisine.equals(restaurant.getCuisine())){
+                Bar bar = dS.getValue(Bar.class);
+                if(barStyle.equals(bar.getBarStyle())){
 
-                    if(priceRange.equals(restaurant.getPriceRange())) {
-                        restaurantList.add(restaurant);
+                    if(priceRange.equals(bar.getPriceRange())) {
+                        barList.add(bar);
                     }
                 }
 
-                rv.setAdapter(restaurantAdapter);
+                rv.setAdapter(barAdapter);
             }
 
             @Override

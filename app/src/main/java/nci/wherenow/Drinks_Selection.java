@@ -12,47 +12,47 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Food_Selection extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class Drinks_Selection extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    Spinner cuisineSpinner, priceSpinner, durationSpinner;
+    Spinner barStyleSpinner, priceSpinner, durationSpinner;
     ArrayAdapter adapter;
     Button btn;
 
-    List<Restaurant> restaurantList;
+    List<Bar> barList;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.food_selection);
+        setContentView(R.layout.drinks_selection);
 
-        restaurantList = new ArrayList<>();
+        barList = new ArrayList<>();
 
 
         //Recognising IDs from activity_main.xml for further use
         btn = findViewById(R.id.btn);
 
         //Importing Cuisines into the Cuisine Spinner
-        adapter = ArrayAdapter.createFromResource(this, R.array.cuisine, android.R.layout.simple_spinner_dropdown_item);
+        adapter = ArrayAdapter.createFromResource(this, R.array.barStyles, android.R.layout.simple_spinner_dropdown_item);
 
-        cuisineSpinner = findViewById(R.id.cuisineSpinner);
-        cuisineSpinner.setAdapter(adapter);
-        cuisineSpinner.setOnItemSelectedListener(Food_Selection.this);
+        barStyleSpinner = findViewById(R.id.barStyleSpinner);
+        barStyleSpinner.setAdapter(adapter);
+        barStyleSpinner.setOnItemSelectedListener(Drinks_Selection.this);
 
         //Importing Prices into the Price Spinner
         adapter = ArrayAdapter.createFromResource(this, R.array.price, android.R.layout.simple_spinner_dropdown_item);
 
         priceSpinner = findViewById(R.id.priceSpinner);
         priceSpinner.setAdapter(adapter);
-        priceSpinner.setOnItemSelectedListener(Food_Selection.this);
+        priceSpinner.setOnItemSelectedListener(Drinks_Selection.this);
 
         //Importing Duration into the Duration Spinner
         adapter = ArrayAdapter.createFromResource(this, R.array.duration, android.R.layout.simple_spinner_dropdown_item);
 
         durationSpinner = findViewById(R.id.durationSpinner);
         durationSpinner.setAdapter(adapter);
-        durationSpinner.setOnItemSelectedListener(Food_Selection.this);
+        durationSpinner.setOnItemSelectedListener(Drinks_Selection.this);
 
     }
 
@@ -65,12 +65,12 @@ public class Food_Selection extends AppCompatActivity implements AdapterView.OnI
     //Creating Button Click to start new activity after filter has been chosen
 
     public void btnClicked (View v){
-        String cuisine = cuisineSpinner.getSelectedItem().toString();
+        String barStyle = barStyleSpinner.getSelectedItem().toString();
         String priceRange = priceSpinner.getSelectedItem().toString();
 
 
-        Intent i = new Intent (this, Restaurant_Results.class);
-        i.putExtra("cuisine", cuisine);
+        Intent i = new Intent (this, Bar_Results.class);
+        i.putExtra("barStyle", barStyle);
         i.putExtra("priceRange", priceRange);
 
         startActivity(i);

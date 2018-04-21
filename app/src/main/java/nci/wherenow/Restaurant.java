@@ -6,41 +6,79 @@ public class Restaurant {
     private int id;
     private String title;
     private  String address;
-    private  String distance;
+    private  String cuisine;
     private  String duration;
-    private  int image;
+    private String PriceRange;
+    private  String image;
+    private String Latitude;
+    private String Longitude;
 
 
-    public Restaurant(int id, String title, String address, String distance, String duration, int image) {
-        this.id = id;
-        this.title = title;
-        this.address = address;
-        this.distance = distance;
-        this.duration = duration;
-        this.image = image;
+    public Restaurant(){
+
     }
 
     public int getId() {
         return id;
     }
 
-    public  String getTitle() {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
         return title;
     }
 
-    public  String getAddress() {
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAddress() {
         return address;
     }
 
-    public  String getDistance() {
-        return distance;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public  String getDuration() {
+    public String getCuisine() {
+        return cuisine;
+    }
+
+    public void setCuisine(String cuisine) {
+        this.cuisine = cuisine;
+    }
+
+    public String getDuration() {
         return duration;
     }
 
-    public  int getImage() {
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getPriceRange() {
+        return PriceRange;
+    }
+
+    public void setPriceRange(String PriceRange) {
+        this.PriceRange = PriceRange;
+    }
+
+    public String getImage() {
         return image;
     }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getlatitude() { return Latitude; }
+
+    public void  setlatitude(String Latitude) { this.Latitude = Latitude; }
+
+    public String getlongitude() { return Longitude; }
+
+    public void  setlongitude(String Longitude) { this.Longitude = Longitude; }
 }

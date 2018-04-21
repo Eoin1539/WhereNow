@@ -16,6 +16,13 @@ public class messageAdapter extends FirebaseListAdapter<message> {
         super(activity, modelClass, modelLayout, ref);
         this.activity = activity;
     }
+    
+    private BarChat objective;
+
+    public messageAdapter(BarChat activity, Class<message> modelClass, int modelLayout, DatabaseReference ref) {
+        super(activity, modelClass, modelLayout, ref);
+        this.objective = objective;
+    }
 
     @Override
     protected void populateView(View v, message model, int position) {
