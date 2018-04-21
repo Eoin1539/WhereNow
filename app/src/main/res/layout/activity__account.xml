@@ -7,7 +7,7 @@
     tools:context="nci.wherenow.Activity_Account">
     
     <Button
-        android:id="@+id/drinks_Selection"
+        android:id="@+id/Drinks_Selection"
         android:layout_width="237dp"
         android:layout_height="42dp"
         android:layout_marginBottom="80dp"

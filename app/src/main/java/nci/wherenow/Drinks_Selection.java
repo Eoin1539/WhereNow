@@ -9,17 +9,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Drinks_Selection extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    Spinner cuisineSpinner, priceSpinner, distanceSpinner, durationSpinner;
+    Spinner barStyleSpinner, priceSpinner, durationSpinner;
     ArrayAdapter adapter;
     Button btn;
 
     List<Bar> barList;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +34,11 @@ public class Drinks_Selection extends AppCompatActivity implements AdapterView.O
         btn = findViewById(R.id.btn);
 
         //Importing Cuisines into the Cuisine Spinner
-        adapter = ArrayAdapter.createFromResource(this, R.array.cuisine, android.R.layout.simple_spinner_dropdown_item);
+        adapter = ArrayAdapter.createFromResource(this, R.array.barStyles, android.R.layout.simple_spinner_dropdown_item);
 
-        cuisineSpinner = findViewById(R.id.cuisineSpinner);
-        cuisineSpinner.setAdapter(adapter);
-        cuisineSpinner.setOnItemSelectedListener(Drinks_Selection.this);
+        barStyleSpinner = findViewById(R.id.barStyleSpinner);
+        barStyleSpinner.setAdapter(adapter);
+        barStyleSpinner.setOnItemSelectedListener(Drinks_Selection.this);
 
         //Importing Prices into the Price Spinner
         adapter = ArrayAdapter.createFromResource(this, R.array.price, android.R.layout.simple_spinner_dropdown_item);
@@ -53,13 +54,6 @@ public class Drinks_Selection extends AppCompatActivity implements AdapterView.O
         durationSpinner.setAdapter(adapter);
         durationSpinner.setOnItemSelectedListener(Drinks_Selection.this);
 
-        /*//Importing Distance into the Distance Spinner
-        adapter = ArrayAdapter.createFromResource(this, R.array.distance, android.R.layout.simple_spinner_dropdown_item);
-
-        distanceSpinner = findViewById(R.id.distanceSpinner);
-        distanceSpinner.setAdapter(adapter);
-        distanceSpinner.setOnItemSelectedListener(Drinks_Selection.this);*/
-
     }
 
     @Override
@@ -67,10 +61,23 @@ public class Drinks_Selection extends AppCompatActivity implements AdapterView.O
 
     }
 
+
+    //Creating Button Click to start new activity after filter has been chosen
+
     public void btnClicked (View v){
-        Intent startNewActivity = new Intent (this, Bar_Results.class);
-        startActivity(startNewActivity);
+        String barStyle = barStyleSpinner.getSelectedItem().toString();
+        String priceRange = priceSpinner.getSelectedItem().toString();
+
+
+        Intent i = new Intent (this, Bar_Results.class);
+        i.putExtra("barStyle", barStyle);
+        i.putExtra("priceRange", priceRange);
+
+        startActivity(i);
+
+
     }
+
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {

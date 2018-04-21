@@ -1,52 +1,92 @@
 package nci.wherenow;
 
 
+
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
- /*
- *RecyclerView.Adapter
- *RecyclerView.ViewHolder
- */
-
 public class BarAdapter extends RecyclerView.Adapter<BarAdapter.BarViewHolder>{
 
-    private Context mCtx;
-    private List<Bar> barList;
-    private Button mapsBtn;
+    List<Bar> barList;
+    Context context;
 
 
-    public BarAdapter(Context mCtx, List<Bar> barList) {
-        this.mCtx = mCtx;
+
+
+    public BarAdapter(List<Bar> barList) {
+
         this.barList = barList;
+
     }
 
     @Override
-    public BarViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.list_layout, null);
+    public BarAdapter.BarViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_layout, parent, false);
+        context = parent.getContext();
         return new BarViewHolder(view);
     }
 
-
     @Override
-    public void onBindViewHolder(BarViewHolder holder, int position) {
-        Bar Bar = barList.get(position);
+    public void onBindViewHolder(BarAdapter.BarViewHolder holder, int position) {
+        Bar bar = barList.get(position);
 
-        holder.textViewTitle.setText(Bar.getTitle());
-        holder.textViewAddress.setText(Bar.getAddress());
-        //holder.textViewDistance.setText(String.valueOf(Bar.getDistance()));
-        holder.textViewDuration.setText(String.valueOf(Bar.getDuration()));
+        holder.title.setText(bar.getTitle());
+        holder.address.setText(bar.getAddress());
+        holder.barStyle.setText(bar.getBarStyle());
+        holder.duration.setText(bar.getDuration());
+        holder.PriceRange.setText(bar.getPriceRange());
+        // holder.Latitude.setText(bar.getlatitude());
+        // holder.Longitude.setText(bar.getlongitude());
+        Picasso.with(context).load(barList.get(position).getImage()).into(holder.image);
 
-        holder.imageView.setImageDrawable((mCtx.getResources().getDrawable(Bar.getImage())));
+
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "You clicked "+bar.getTitle(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(context, GalleryActivity.class);
+                intent.putExtra("barTitle", bar.getTitle());
+                //intent.putExtra("barLatitude", bar.getlatitude());
+                //intent.putExtra("barLongitude", bar.getlongitude());
+                context.startActivity(intent);
+            }
+        });
+    }
+
+
+
+    public class BarViewHolder extends RecyclerView.ViewHolder{
+
+        TextView title, address, barStyle, duration, PriceRange;
+        ImageView image;
+        RelativeLayout relativeLayout;
+
+        public BarViewHolder(View itemView) {
+            super(itemView);
+
+            title = itemView.findViewById(R.id.textViewTitle);
+            address = itemView.findViewById(R.id.textViewAddress);
+            barStyle = itemView.findViewById(R.id.textViewCuisine);
+            duration = itemView.findViewById(R.id.textViewDuration);
+            PriceRange = itemView.findViewById(R.id.textViewPriceRange);
+            image = itemView.findViewById(R.id.viewImage);
+            relativeLayout = itemView.findViewById(R.id.relativeLayout);
+
+        }
     }
 
     @Override
@@ -54,22 +94,6 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.BarViewHolder>{
         return barList.size();
     }
 
-    class BarViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView imageView;
-        TextView textViewTitle, textViewAddress, textViewDistance, textViewDuration;
-
-
-        public BarViewHolder(View itemView) {
-            super(itemView);
-
-            imageView = itemView.findViewById(R.id.viewImage);
-            textViewTitle = itemView.findViewById(R.id.textViewTitle);
-            textViewAddress = itemView.findViewById(R.id.textViewAddress);
-            //textViewDistance = itemView.findViewById(R.id.textViewDistance);
-            textViewDuration = itemView.findViewById(R.id.textViewDuration);
-        }
-
-    }
 
 }

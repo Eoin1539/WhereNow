@@ -19,6 +19,16 @@
         <item name="cuisine">Healthy</item>
     </string-array>
 
+    <string-array name="barStyles">
+
+        <item name="barStyle">Pub</item>
+        <item name="barStyle">Bar</item>
+        <item name="barStyle">Sports Bar</item>
+        <item name="barStyle">Cocktail Bar</item>
+        <item name="barStyle">Nightclub</item>
+
+    </string-array>
+
     <string-array name="price">
         <item name="price">€</item>
         <item name="price">€€</item>

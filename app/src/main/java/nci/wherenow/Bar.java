@@ -5,41 +5,87 @@ public class Bar {
     private int id;
     private String title;
     private  String address;
-    //private  String distance;
+    private String barStyle;
+    private String PriceRange;
     private  String duration;
-    private  int image;
+    private  String image;
+    private String Latitude;
+    private String Longitude;
 
 
-    public Bar(int id, String title, String address, String distance, String duration, int image) {
-        this.id = id;
-        this.title = title;
-        this.address = address;
-       // this.distance = distance;
-        this.duration = duration;
-        this.image = image;
+    public Bar(){
+
     }
 
     public int getId() {
         return id;
     }
 
-    public  String getTitle() {
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
         return title;
     }
 
-    public  String getAddress() {
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAddress() {
         return address;
     }
 
-    /*public  String getDistance() {
-        return distance;
-    }*/
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-    public  String getDuration() {
+    public String getBarStyle() {
+        return barStyle;
+    }
+
+    public void setBarStyle(String barStyle) {
+        this.barStyle = barStyle;
+    }
+
+    public String getPriceRange() {
+        return PriceRange;
+    }
+
+    public void setPriceRange(String priceRange) {
+        PriceRange = priceRange;
+    }
+
+    public String getDuration() {
         return duration;
     }
 
-    public  int getImage() {
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getImage() {
         return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getLatitude() {
+        return Latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        Latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return Longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        Longitude = longitude;
     }
 }

@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:addStatesFromChildren="false"
-    tools:context="nci.wherenow.Drinks_Selection"
+    tools:context="nci.wherenow.Food_Selection"
     tools:layout_editor_absoluteY="81dp">
 
     <Button
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="83dp"
+        android:layout_marginTop="84dp"
         android:background="@drawable/drinkfoodbuttons"
         android:onClick="btnClicked"
         android:text="@string/search"
@@ -26,21 +25,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </android.support.v7.widget.RecyclerView>
-
-    <Spinner
-        android:id="@+id/distanceSpinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priceSpinner" />
 
     <Spinner
         android:id="@+id/durationSpinner"
@@ -49,7 +39,7 @@
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/distanceSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/priceSpinner" />
 
     <Spinner
         android:id="@+id/priceSpinner"
@@ -58,10 +48,10 @@
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cuisineSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/barStyleSpinner" />
 
     <Spinner
-        android:id="@+id/cuisineSpinner"
+        android:id="@+id/barStyleSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
