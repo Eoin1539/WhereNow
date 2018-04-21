@@ -51,7 +51,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         holder.PriceRange.setText(restaurant.getPriceRange());
         // holder.Latitude.setText(restaurant.getlatitude());
         // holder.Longitude.setText(restaurant.getlongitude());
-        Picasso.with(context).load(restaurantList.get(position).getImage()).resize(200, 200).into(holder.image);
+        Picasso.with(context).load(restaurantList.get(position).getImage()).into(holder.image);
 
 
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {

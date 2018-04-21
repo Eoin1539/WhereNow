@@ -15,7 +15,6 @@
         <item name="cuisine">Korean</item>
         <item name="cuisine">Bar and Restaurant</item>
         <item name="cuisine">French</item>
-        <item name="cuisine">European</item>
         <item name="cuisine">Seafood</item>
         <item name="cuisine">Healthy</item>
     </string-array>
