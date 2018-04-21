@@ -10,7 +10,7 @@ import com.google.firebase.database.DatabaseReference;
 
 public class messageAdapter extends FirebaseListAdapter<message> {
 
-    private RestaurantChat activity;
+    public RestaurantChat activity;
 
     public messageAdapter(RestaurantChat activity, Class<message> modelClass, int modelLayout, DatabaseReference ref) {
         super(activity, modelClass, modelLayout, ref);

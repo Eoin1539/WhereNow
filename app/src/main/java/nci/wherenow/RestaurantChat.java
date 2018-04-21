@@ -33,13 +33,13 @@ public class RestaurantChat extends AppCompatActivity {
         send = (FloatingActionButton)findViewById(R.id.send);
         input = (EditText)findViewById(R.id.input);
         messages = (ListView)findViewById(R.id.messages);
-        showOldMessages();
+        showAllOldMessages();
 
             send.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             if (input.getText().toString().trim().equals("")) {
-                Toast.makeText(RestaurantChat.this, "Enter message.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RestaurantChat.this, "Please enter some texts!", Toast.LENGTH_SHORT).show();
             } else {
                 FirebaseDatabase.getInstance()
                         .getReference()
@@ -54,11 +54,16 @@ public class RestaurantChat extends AppCompatActivity {
     });
     }
 
-    public void showOldMessages() {
-        loggedInUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        FirebaseListAdapter adapter = new messageAdapter(this, message.class, R.layout.messagein,
-                FirebaseDatabase.getInstance().getReference());
-        messages.setAdapter(adapter);
+    public void showAllOldMessages() {
+        try {
+            loggedInUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            FirebaseListAdapter adapter = new messageAdapter(this, message.class, R.layout.messagein,
+                    FirebaseDatabase.getInstance().getReference());
+            messages.setAdapter(adapter);
+        }
+        catch(DatabaseException ex){
+            ex.printStackTrace();
+        }
     }
 
     public String getLoggedInUser() {
