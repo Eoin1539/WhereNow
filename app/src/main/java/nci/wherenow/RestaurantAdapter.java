@@ -40,6 +40,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         return new RestaurantViewHolder(view);
     }
 
+
+    //To get the location of the restaurant when pressed and begin a seperate activity. This is done via a fragment, so the fragment variables change,
+    //Depending on the restaurant picked.
     @Override
     public void onBindViewHolder(RestaurantAdapter.RestaurantViewHolder holder, int position) {
         Restaurant restaurant = restaurantList.get(position);
@@ -49,19 +52,30 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         holder.cuisine.setText(restaurant.getCuisine());
         holder.duration.setText(restaurant.getDuration());
         holder.PriceRange.setText(restaurant.getPriceRange());
-        // holder.Latitude.setText(restaurant.getlatitude());
-        // holder.Longitude.setText(restaurant.getlongitude());
+        //holder.latitude.setText(restaurant.getlatitude());
+        //holder.longitude.setText(restaurant.getlongitude());
         Picasso.with(context).load(restaurantList.get(position).getImage()).into(holder.image);
 
 
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //converting string to double for lat and long
+
+                double latitude = Double.parseDouble(restaurant.getlatitude());
+                double longitude = Double.parseDouble(restaurant.getlongitude());
+
                 Toast.makeText(context, "You clicked "+restaurant.getTitle(), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(context, GalleryActivity.class);
                 intent.putExtra("restaurantTitle", restaurant.getTitle());
                 intent.putExtra("restaurantLatitude", restaurant.getlatitude());
                 intent.putExtra("restaurantLongitude", restaurant.getlongitude());
+
+                //intent.putExtra("lat", latitude);
+                //intent.putExtra("lon", longitude);
+
+
                 context.startActivity(intent);
             }
         });
@@ -71,7 +85,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     public class RestaurantViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title, address, cuisine, duration, PriceRange;
+        TextView title, address, cuisine, duration, PriceRange, latitude, longitude;
         ImageView image;
         RelativeLayout relativeLayout;
 

@@ -29,6 +29,8 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
 
     String restaurantLatitude;
     String restaurantLongitude;
+    Double latitude;
+    Double longitude;
     MapView mMapView;
     private GoogleMap googleMap;
 
@@ -43,21 +45,18 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
 
         getIncomingIntent();
 
-        //converting string to double for lat and long
-        //double storeLat = Double.parseDouble("restaurantLatitude");
-        //double storeLon = Double.parseDouble("restaurantLongitude");
-
-        /*// Using latitude and longitude function for creating a position for store
-        LatLng position = new LatLng(storeLat, storeLon);*/
-
     }
 
     private void getIncomingIntent() {
         if (getIntent().hasExtra("restaurantTitle")) {
-
+            //Get incoming intents from Restaurant Adapter
             String restaurantTitle = getIntent().getStringExtra("restaurantTitle");
             String restaurantLatitude = getIntent().getStringExtra("restaurantLatitude");
             String restaurantLongitude = getIntent().getStringExtra("restaurantLongitude");
+
+            //Attempting to get the double as a incoming intent.
+            //Double lat = getIntent().getDoubleExtra("lat", latitude);
+            //Double lon = getIntent().getDoubleExtra("lon", longitude);
 
 
             setTitle(restaurantTitle);
@@ -66,6 +65,7 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
 
         }
     }
+    //Cast the values to a textviews.
 
     private void setTitle(String title) {
         TextView name = findViewById(R.id.restaurantTitle);
@@ -86,9 +86,106 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
+        // This would be converting the double (lat & long) to be used in a function that the map marker would reference.
+
+        //LatLng restaurant = new LatLng(latitude, longitude);
+        LatLng mcd1 = new LatLng(53.3477805,-6.2610345);
+        LatLng booj1 = new LatLng(53.3488712, -6.2584623);
+        LatLng start = new LatLng(53.3498056, -6.2604809);
+        LatLng nando = new LatLng(53.3487901, -6.268);
+        LatLng seven = new LatLng(53.3485279, -6.2443073);
+        LatLng drunk = new LatLng(53.3492224, -6.2448782);
+        LatLng j2 = new LatLng(53.3476853, -6.2450489);
+        LatLng rockets = new LatLng(53.3476569, -6.2445232);
+        LatLng musashi = new LatLng(53.3491035, -6.2440619);
+        LatLng toss = new LatLng(53.3487377, -6.2487459);
+        LatLng bb = new LatLng(53.3494478, -6.2443449);
+        LatLng milano = new LatLng(53.3482128, -6.2450042);
+        LatLng east = new LatLng(6.2450042, -6.244615);
+        LatLng fornaio = new LatLng(53.3484815, -6.2440733);
+        LatLng broadway = new LatLng(53.349994, -6.24464238);
+        LatLng parigi = new LatLng(53.3463529, -6.2449788);
+        LatLng mv = new LatLng(53.3475242, -6.2380027);
+        LatLng star = new LatLng(53.3508567, -6.2527234);
+        LatLng pantry = new LatLng(53.3504488, -6.2527793);
+        LatLng thai = new LatLng(53.3511135, -6.2522776);
+        LatLng supermacs = new LatLng(53.3511135, -6.2522776);
+        LatLng harbour = new LatLng(53.3511135, -6.2522776);
+        LatLng lebon = new LatLng(53.3507242, -6.2559258);
+        LatLng zambrero = new LatLng(53.3448867, -6.2479158);
+        LatLng pig = new LatLng(53.3472204, -6.2512515);
+        LatLng bean = new LatLng(53.3512087, -6.2538473);
+        LatLng burger = new LatLng(53.3492459, 6.2615706);
+        LatLng supermacs2 = new LatLng(53.3492459, -6.2615706);
+        LatLng jimmy = new LatLng(53.3492459, -6.2615706);
+        LatLng mcd2 = new LatLng(53.3492459, 6.2615706);
+        LatLng burger2 = new LatLng(53.3492459, -6.2615706);
+        LatLng freshii = new LatLng(53.3502566, -6.2486585);
+        LatLng chopped = new LatLng(53.3505709, 6.2532054);
+
+
         googleMap.addMarker(new MarkerOptions()
-                .position(new LatLng(0, 0))
-                .title("Marker"));
+                .position(mcd1)
+                .title("McDonald's O'Connell Street"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(booj1)
+                .title("Boojum Lower Abbey Street"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(start)
+                .title("Starbucks O'Connell Street"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(nando)
+                .title("Nandos - Mary Street"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(seven)
+                .title("Seven Wonders"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(drunk)
+                .title("Drunken Fish"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(j2)
+                .title("J2 Grill & Sushi"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(rockets)
+                .title("Rockets"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(musashi)
+                .title("Musashi"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(toss)
+                .title("TOSS'D Noodles & Salads"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(bb)
+                .title("Burritos & Blues"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(milano)
+                .title("Milano"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(east)
+                .title("East"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(fornaio)
+                .title("Fornaio"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(broadway)
+                .title("Broadway pizza"));
+
+
+
     }
 }
 
