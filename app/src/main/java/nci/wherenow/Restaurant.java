@@ -13,6 +13,11 @@ public class Restaurant {
     private String Latitude;
     private String Longitude;
 
+
+    public Restaurant(){
+
+    }
+
     public int getId() {
         return id;
     }
