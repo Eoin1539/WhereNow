@@ -5,55 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="nci.wherenow.Activity_Account">
-    
-    <Button
-        android:id="@+id/Drinks_Selection"
-        android:layout_width="237dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="80dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/drinkfoodbuttons"
-        android:onClick="drinksSelection"
-        android:text="Drinks Section"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/Food_Selection"
-        android:layout_width="237dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="128dp"
-        android:background="@drawable/drinkfoodbuttons"
-        android:onClick="foodSelection"
-        android:text="Food Section"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/MapsActivity"
-        android:layout_width="237dp"
-        android:layout_height="42dp"
-        android:layout_marginBottom="180dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/drinkfoodbuttons"
-        android:onClick="mapActivity"
-        android:text="View locations on map"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/logoutBtn"
@@ -69,19 +20,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/socialBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="260dp"
+
+    <ImageButton
+        android:id="@+id/restaurantBtn"
+        android:layout_width="362dp"
+        android:layout_height="86dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/socialbtn"
-        android:onClick="Socialbtn"
-        android:text="Social"
-        android:textColor="@android:color/white"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.019"
+        app:srcCompat="@drawable/restaurantBtn" />
+
+    <ImageButton
+        android:id="@+id/drinksBtn"
+        android:layout_width="362dp"
+        android:layout_height="86dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="124dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/drinksbtn" />
+
+    <ImageButton
+        android:id="@+id/mapsBtn"
+        android:layout_width="362dp"
+        android:layout_height="86dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/logoutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575"
+        app:srcCompat="@drawable/mapsBtn" />
+
+    <ImageButton
+        android:id="@+id/chatBtn"
+        android:layout_width="362dp"
+        android:layout_height="86dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.826"
+        app:srcCompat="@drawable/chatBtn" />
 
 </android.support.constraint.ConstraintLayout>

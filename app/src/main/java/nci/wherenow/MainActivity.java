@@ -123,15 +123,15 @@ public class MainActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            mFacebookBtn.setEnabled(true);
+
                             updateUI();
                         } else {
-                            // If sign in fails, display a messagein to the user.
+                            // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(MainActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
 
-                            mFacebookBtn.setEnabled(true);
+
                             updateUI();
                         }
 
