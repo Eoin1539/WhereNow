@@ -73,19 +73,19 @@ public class Bar {
         this.image = image;
     }
 
-    public String getLatitude() {
+    public String getlatitude() {
         return Latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setlatitude(String latitude) {
         Latitude = latitude;
     }
 
-    public String getLongitude() {
+    public String getlongitude() {
         return Longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setlongitude(String longitude) {
         Longitude = longitude;
     }
 }
