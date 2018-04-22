@@ -13,33 +13,21 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-/**
- * Created by Jamie on 20/04/2018.
- */
+public class BarGalleryActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-public class GalleryActivity extends AppCompatActivity implements OnMapReadyCallback {
-
-    String restaurantLatitude;
-    String restaurantLongitude;
-    //Double latitude;
-    //Double longitude;
+    String barlatitude;
+    String barLongitude;
     MapView mMapView;
     private GoogleMap googleMap;
     private GoogleMap mMap;
@@ -48,12 +36,10 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
 
     LocationListener locationListener;
 
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gallery);
+        setContentView(R.layout.activity_gallery_bar);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -64,37 +50,38 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
     }
 
     private void getIncomingIntent() {
-        if (getIntent().hasExtra("restaurantTitle")) {
+        if (getIntent().hasExtra("barTitle")) {
             //Get incoming intents from Restaurant Adapter
-            String restaurantTitle = getIntent().getStringExtra("restaurantTitle");
-            String restaurantLatitude = getIntent().getStringExtra("restaurantLatitude");
-            String restaurantLongitude = getIntent().getStringExtra("restaurantLongitude");
+            String barTitle = getIntent().getStringExtra("barTitle");
+            String barLatitude = getIntent().getStringExtra("barLatitude");
+            String barLongitude = getIntent().getStringExtra("barLongitude");
 
             //Attempting to get the double as a incoming intent.
             //Double lat = getIntent().getDoubleExtra("lat", latitude);
             //Double lon = getIntent().getDoubleExtra("lon", longitude);
 
 
-            setTitle(restaurantTitle);
-            setlatitude(restaurantLatitude);
-            setlongitude(restaurantLongitude);
+            setTitle(barTitle);
+            setlatitude(barLatitude);
+            setlongitude(barLongitude);
 
         }
     }
+
     //Cast the values to a textviews.
 
     private void setTitle(String title) {
-        TextView name = findViewById(R.id.restaurantTitle);
+        TextView name = findViewById(R.id.barTitle);
         name.setText(title);
     }
 
     private void setlatitude(String latitude) {
-        TextView name = findViewById(R.id.restaurantLatitude);
+        TextView name = findViewById(R.id.barLatitude);
         name.setText(latitude);
     }
 
     private void setlongitude(String longitude) {
-        TextView name = findViewById(R.id.restaurantLongitude);
+        TextView name = findViewById(R.id.barLongitude);
         name.setText(longitude);
     }
 
@@ -193,174 +180,206 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
 
 
             }
+        }
+
+        //Hard-coding the coordinates of the bars within the database.
+        LatLng lago = new LatLng(53.3497424, -6.2438131);
+        LatLng molloy = new LatLng(53.3497424, -6.2438131);
+        LatLng harbour = new LatLng(53.3494549, -6.2486863);
+        LatLng madigan = new LatLng(53.3513714, -6.24911);
+        LatLng celt = new LatLng(53.3505549, -6.254878);
+        LatLng bd = new LatLng(53.3501824, -6.2503613);
+        LatLng ll = new LatLng(53.3525912, -6.249217);
+        LatLng tb = new LatLng(53.3504733, - 6.25122);
+        LatLng wf = new LatLng(53.3485314, -6.2553512);
+        LatLng central = new LatLng(53.3479796, -6.2578941);
+        LatLng cb = new LatLng(53.3492548, 6.2597914);
+        LatLng bb = new LatLng(53.3480648, -6.2633044);
+        LatLng tramline = new LatLng(53.3451242, -6.2604355);
+        LatLng temple = new LatLng(53.3459644, -6.2624744);
+        LatLng auld = new LatLng(53.3452776, -6.2633965);
+        LatLng palace = new LatLng(53.3456526, -6.2621269);
+        LatLng diceys = new LatLng(53.3361515, -6.2650107);
+        LatLng coppers = new LatLng(53.3361515, -6.2650107);
+        LatLng club = new LatLng(53.3457731, -6.2583626);
+        LatLng clubm = new LatLng(53.3457731, -6.2583626);
+        LatLng stag = new LatLng(53.3439939, -6.2633322);
+        LatLng foggy = new LatLng(53.3442414, -6.2627644);
+        LatLng buskers = new LatLng(53.3453621, -6.2630362);
+        LatLng bridge = new LatLng(53.3454213, -6.2634377);
+        LatLng river = new LatLng(53.346204, -6.2597043);
+        LatLng ryan = new LatLng(53.3501102, -6.2519421);
+        LatLng murray = new LatLng(53.3520644, -6.2607971);
+        LatLng living = new LatLng(53.3525652, -6.2611377);
+        LatLng oconnell = new LatLng(53.3475341, -6.2601529);
+        LatLng workmans = new LatLng(53.3454449, -6.2690097);
+        LatLng peadar = new LatLng(53.3451551, -6.2668893);
+        LatLng merchant = new LatLng(53.3456686, -6.261746);
+        LatLng vintage = new LatLng(53.3456686, -6.261746);
+        LatLng mint = new LatLng(53.3459736, -6.2596171);
+        LatLng yamamori = new LatLng(53.3451341, -6.2597184);
+        LatLng blind = new LatLng(53.3450178, -6.2595112);
+        LatLng dakota = new LatLng(53.3450178, -6.2595112);
+        LatLng liquor = new LatLng(53.3450178, -6.2595112);
+
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(lago)
+                .title("Lagoona Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(molloy)
+                .title("Molloy's"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(harbour)
+                .title("Harbourmaster Bar and Restaurant"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(madigan)
+                .title("Madigan's Pub Connolly Station"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(celt)
+                .title("The Celt"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(bd)
+                .title("The Brew Dock"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(ll)
+                .title("Lloyd's Bar & Lounge"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(tb)
+                .title("74 Talbot Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(wf)
+                .title("The Wiley Fox"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(central)
+                .title("The Grand Central"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(cb)
+                .title("The Confession Box"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(bb)
+                .title("Bad Bobs Temple Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(tramline)
+                .title("Tramline"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(temple)
+                .title("The Temple Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(auld)
+                .title("The Auld Dubliner"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(palace)
+                .title("The Palace Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(diceys)
+                .title("Dicey's Garden Club"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(coppers)
+                .title("Copper Face Jacks"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(club)
+                .title("Club Nassau"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(clubm)
+                .title("Club M"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(stag)
+                .title("The Stag's Head"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(foggy)
+                .title("Foggy Dew"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(buskers)
+                .title("Buskers"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(bridge)
+                .title("The Ha'penny Bridge Inn"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(river)
+                .title("River Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(ryan)
+                .title("Ryan's Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(murray)
+                .title("Murray's Pub"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(living)
+                .title("The Living Room"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(oconnell)
+                .title("O'Connell's Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(workmans)
+                .title("The Workman's Club"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(peadar)
+                .title("Peadar Kearney's"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(merchant)
+                .title("Merchant's Arch"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(vintage)
+                .title("Vintage Cocktail Club"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(mint)
+                .title("The Mint Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(yamamori)
+                .title("Yamamori Tengu"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(blind)
+                .title("The Blind Pig Speakeasy"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(dakota)
+                .title("Dakota"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(liquor)
+                .title("The Liquor Rooms"));
+
+
+
 
 
         }
 
-        // This would be converting the double (lat & long) to be used in a function that the map marker would reference.
-
-        //LatLng restaurant = new LatLng(latitude, longitude);
-        //Hard-coding the coordinates of the restaurants within the databse.
-        LatLng mcd1 = new LatLng(53.3477805,-6.2610345);
-        LatLng booj1 = new LatLng(53.3488712, -6.2584623);
-        LatLng start = new LatLng(53.3498056, -6.2604809);
-        LatLng nando = new LatLng(53.3487901, -6.268);
-        LatLng seven = new LatLng(53.3485279, -6.2443073);
-        LatLng drunk = new LatLng(53.3492224, -6.2448782);
-        LatLng j2 = new LatLng(53.3476853, -6.2450489);
-        LatLng rockets = new LatLng(53.3476569, -6.2445232);
-        LatLng musashi = new LatLng(53.3491035, -6.2440619);
-        LatLng toss = new LatLng(53.3487377, -6.2487459);
-        LatLng bb = new LatLng(53.3494478, -6.2443449);
-        LatLng milano = new LatLng(53.3482128, -6.2450042);
-        LatLng east = new LatLng(53.348385, -6.244615);
-        LatLng fornaio = new LatLng(53.3484815, -6.2440733);
-        LatLng broadway = new LatLng(53.349994, -6.24464238);
-        LatLng parigi = new LatLng(53.3463529, -6.2449788);
-        LatLng mv = new LatLng(53.3475242, -6.2380027);
-        LatLng star = new LatLng(53.3508567, -6.2527234);
-        LatLng pantry = new LatLng(53.3504488, -6.2527793);
-        LatLng thai = new LatLng(53.3511135, -6.2522776);
-        LatLng supermacs = new LatLng(53.3511135, -6.2522776);
-        LatLng harbour = new LatLng(53.3511135, -6.2522776);
-        LatLng lebon = new LatLng(53.3507242, -6.2559258);
-        LatLng zambrero = new LatLng(53.3448867, -6.2479158);
-        LatLng pig = new LatLng(53.3472204, -6.2512515);
-        LatLng bean = new LatLng(53.3512087, -6.2538473);
-        LatLng supermacs2 = new LatLng(53.3492459, -6.2615706);
-        LatLng mcd2 = new LatLng(53.3492459, -6.2615706);
-        LatLng burger2 = new LatLng(53.3492459, -6.2615706);
-        LatLng freshii = new LatLng(53.3502566, -6.2486585);
-        LatLng chopped = new LatLng(53.3505709, -6.2532054);
-
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(mcd1)
-                .title("McDonald's O'Connell Street"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(booj1)
-                .title("Boojum Lower Abbey Street"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(start)
-                .title("Starbucks O'Connell Street"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(nando)
-                .title("Nandos - Mary Street"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(seven)
-                .title("Seven Wonders"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(drunk)
-                .title("Drunken Fish"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(j2)
-                .title("J2 Grill & Sushi"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(rockets)
-                .title("Rockets"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(musashi)
-                .title("Musashi"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(toss)
-                .title("TOSS'D Noodles & Salads"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(bb)
-                .title("Burritos & Blues"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(milano)
-                .title("Milano"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(east)
-                .title("East"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(fornaio)
-                .title("Fornaio"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(broadway)
-                .title("Broadway pizza"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(parigi)
-                .title("Caffe Parigi"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(mv)
-                .title("MV Cill Airne"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(star)
-                .title("Star Pizza"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(pantry)
-                .title("The Pantry"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(thai)
-                .title("Thai Spice"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(supermacs)
-                .title("Supermacs"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(harbour)
-                .title("The Harbourmaster"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(lebon)
-                .title("Le Bon Crubeen"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(zambrero)
-                .title("Zambrero Pearse Street"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(pig)
-                .title("The Pig & Heifer Cafe City Quay"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(bean)
-                .title("Bean & Gone Cafe"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(supermacs2)
-                .title("Supermac's"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(mcd2)
-                .title("McDonald's"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(burger2)
-                .title("Burger King"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(freshii)
-                .title("Freshii"));
-
-        googleMap.addMarker(new MarkerOptions()
-                .position(chopped)
-                .title("Chopped"));
-
-
-
-
     }
-}
 
