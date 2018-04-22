@@ -65,17 +65,17 @@ public class Activity_Account extends AppCompatActivity {
         finish();
     }
     
-    public void drinksBtn(View view) {
+    public void drinkbtn(View view) {
         Intent startNewActivity = new Intent(this, Drinks_Selection.class);
         startActivity(startNewActivity);
     }
     
-    public void foodBtn(View view) {
+    public void foodbtn(View view) {
         Intent startNewActivity = new Intent(this, Food_Selection.class);
         startActivity(startNewActivity);
     }
 
-    public void mapsBtn(View view) {
+    public void mapbtn(View view) {
         Intent startNewActivity = new Intent(this, MapsActivity.class);
         startActivity(startNewActivity);
     }

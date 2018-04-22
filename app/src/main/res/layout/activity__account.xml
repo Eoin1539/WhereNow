@@ -22,7 +22,7 @@
 
 
     <ImageButton
-        android:id="@+id/restaurantBtn"
+        android:id="@+id/restaurantbtn"
         android:layout_width="362dp"
         android:layout_height="86dp"
         android:layout_marginBottom="8dp"
@@ -34,22 +34,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.019"
-        app:srcCompat="@drawable/restaurantBtn" />
+        app:srcCompat="@drawable/restaurantbtn" />
 
     <ImageButton
-        android:id="@+id/drinksBtn"
+        android:id="@+id/drinkbtn"
         android:layout_width="362dp"
         android:layout_height="86dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="124dp"
+        app:layout_constraintBottom_toBottomOf="@+id/logoutBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/drinksbtn" />
 
     <ImageButton
-        android:id="@+id/mapsBtn"
+        android:id="@+id/mapbtn"
         android:layout_width="362dp"
         android:layout_height="86dp"
         android:layout_marginBottom="8dp"
@@ -61,10 +64,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.575"
-        app:srcCompat="@drawable/mapsBtn" />
+        app:srcCompat="@drawable/mapsbtn" />
 
     <ImageButton
-        android:id="@+id/chatBtn"
+        android:id="@+id/socialbtn"
         android:layout_width="362dp"
         android:layout_height="86dp"
         android:layout_marginBottom="8dp"
@@ -76,6 +79,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.826"
-        app:srcCompat="@drawable/chatBtn" />
+        app:srcCompat="@drawable/chatbtn" />
 
 </android.support.constraint.ConstraintLayout>
