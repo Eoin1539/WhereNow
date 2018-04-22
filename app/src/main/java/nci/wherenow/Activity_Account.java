@@ -57,13 +57,7 @@ public class Activity_Account extends AppCompatActivity {
         }
     }
 
-    private void updateUI(){
-        Toast.makeText(Activity_Account.this,"You are logged out", Toast.LENGTH_LONG).show();
 
-        Intent accountIntent = new Intent(Activity_Account.this, MainActivity.class);
-        startActivity(accountIntent);
-        finish();
-    }
     
     public void drinkbtn(View view) {
         Intent startNewActivity = new Intent(this, Drinks_Selection.class);
@@ -75,16 +69,19 @@ public class Activity_Account extends AppCompatActivity {
         startActivity(startNewActivity);
     }
 
-    public void mapbtn(View view) {
-        Intent startNewActivity = new Intent(this, MapsActivity.class);
-        startActivity(startNewActivity);
-    }
-
     public void socialbtn(View view) {
         Intent startNewActivity = new Intent(this, RestaurantChat.class);
         startActivity(startNewActivity);
     }
+
+    private void updateUI(){
+        Toast.makeText(Activity_Account.this,"You are logged out", Toast.LENGTH_LONG).show();
+
+        Intent accountIntent = new Intent(Activity_Account.this, MainActivity.class);
+        startActivity(accountIntent);
+        finish();
     }
+}
 
 
 
