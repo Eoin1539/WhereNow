@@ -66,6 +66,7 @@
         <activity android:name=".RestaurantChat" />
         <activity android:name=".BarChat" />
         <activity android:name=".GalleryActivity" />
+        <activity android:name=".BarGalleryActivity" />
     </application>
 
 </manifest>

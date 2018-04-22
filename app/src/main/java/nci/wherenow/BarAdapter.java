@@ -58,10 +58,10 @@ public class BarAdapter extends RecyclerView.Adapter<BarAdapter.BarViewHolder>{
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "You clicked "+bar.getTitle(), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(context, GalleryActivity.class);
+                Intent intent = new Intent(context, BarGalleryActivity.class);
                 intent.putExtra("barTitle", bar.getTitle());
-                //intent.putExtra("barLatitude", bar.getlatitude());
-                //intent.putExtra("barLongitude", bar.getlongitude());
+                intent.putExtra("barLatitude", bar.getlatitude());
+                intent.putExtra("barLongitude", bar.getlongitude());
                 context.startActivity(intent);
             }
         });

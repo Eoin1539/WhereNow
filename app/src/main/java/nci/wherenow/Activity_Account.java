@@ -57,6 +57,23 @@ public class Activity_Account extends AppCompatActivity {
         }
     }
 
+
+    
+    public void drinkbtn(View view) {
+        Intent startNewActivity = new Intent(this, Drinks_Selection.class);
+        startActivity(startNewActivity);
+    }
+    
+    public void foodbtn(View view) {
+        Intent startNewActivity = new Intent(this, Food_Selection.class);
+        startActivity(startNewActivity);
+    }
+
+    public void socialbtn(View view) {
+        Intent startNewActivity = new Intent(this, RestaurantChat.class);
+        startActivity(startNewActivity);
+    }
+
     private void updateUI(){
         Toast.makeText(Activity_Account.this,"You are logged out", Toast.LENGTH_LONG).show();
 
@@ -64,27 +81,7 @@ public class Activity_Account extends AppCompatActivity {
         startActivity(accountIntent);
         finish();
     }
-    
-    public void drinksSelection(View view) {
-        Intent startNewActivity = new Intent(this, Drinks_Selection.class);
-        startActivity(startNewActivity);
-    }
-    
-    public void foodSelection(View view) {
-        Intent startNewActivity = new Intent(this, Food_Selection.class);
-        startActivity(startNewActivity);
-    }
-
-    public void mapActivity(View view) {
-        Intent startNewActivity = new Intent(this, MapsActivity.class);
-        startActivity(startNewActivity);
-    }
-
-    public void Socialbtn(View view) {
-        Intent startNewActivity = new Intent(this, RestaurantChat.class);
-        startActivity(startNewActivity);
-    }
-    }
+}
 
 
 
