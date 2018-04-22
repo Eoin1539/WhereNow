@@ -101,7 +101,7 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
         LatLng toss = new LatLng(53.3487377, -6.2487459);
         LatLng bb = new LatLng(53.3494478, -6.2443449);
         LatLng milano = new LatLng(53.3482128, -6.2450042);
-        LatLng east = new LatLng(6.2450042, -6.244615);
+        LatLng east = new LatLng(53.348385, -6.244615);
         LatLng fornaio = new LatLng(53.3484815, -6.2440733);
         LatLng broadway = new LatLng(53.349994, -6.24464238);
         LatLng parigi = new LatLng(53.3463529, -6.2449788);
@@ -115,13 +115,11 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
         LatLng zambrero = new LatLng(53.3448867, -6.2479158);
         LatLng pig = new LatLng(53.3472204, -6.2512515);
         LatLng bean = new LatLng(53.3512087, -6.2538473);
-        LatLng burger = new LatLng(53.3492459, 6.2615706);
         LatLng supermacs2 = new LatLng(53.3492459, -6.2615706);
-        LatLng jimmy = new LatLng(53.3492459, -6.2615706);
-        LatLng mcd2 = new LatLng(53.3492459, 6.2615706);
+        LatLng mcd2 = new LatLng(53.3492459, -6.2615706);
         LatLng burger2 = new LatLng(53.3492459, -6.2615706);
         LatLng freshii = new LatLng(53.3502566, -6.2486585);
-        LatLng chopped = new LatLng(53.3505709, 6.2532054);
+        LatLng chopped = new LatLng(53.3505709, -6.2532054);
 
 
         googleMap.addMarker(new MarkerOptions()
@@ -183,6 +181,71 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
         googleMap.addMarker(new MarkerOptions()
                 .position(broadway)
                 .title("Broadway pizza"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(parigi)
+                .title("Caffe Parigi"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(mv)
+                .title("MV Cill Airne"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(star)
+                .title("Star Pizza"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(pantry)
+                .title("The Pantry"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(thai)
+                .title("Thai Spice"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(supermacs)
+                .title("Supermacs"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(harbour)
+                .title("The Harbourmaster"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(lebon)
+                .title("Le Bon Crubeen"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(zambrero)
+                .title("Zambrero Pearse Street"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(pig)
+                .title("The Pig & Heifer Cafe City Quay"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(bean)
+                .title("Bean & Gone Cafe"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(supermacs2)
+                .title("Supermac's"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(mcd2)
+                .title("McDonald's"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(burger2)
+                .title("Burger King"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(freshii)
+                .title("Freshii"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(chopped)
+                .title("Chopped"));
+
 
 
 
