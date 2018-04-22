@@ -1,21 +1,27 @@
 package nci.wherenow;
 
-import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.support.design.widget.FloatingActionButton;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.content.Intent;
+import android.view.View.OnClickListener;
 
 import com.firebase.ui.database.FirebaseListAdapter;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.*;
+
+import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.FirebaseDatabase;
 
-import static nci.wherenow.R.layout.activity_bar_chat;
+import static nci.wherenow.R.layout.*;
 
-public class BarChat extends AppCompatActivity {
+public class chat extends AppCompatActivity {
     FloatingActionButton send;
     EditText input;
     ListView messages;
@@ -23,17 +29,17 @@ public class BarChat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_bar_chat);
+        setContentView(activity_restaurant_chat);
         send = (FloatingActionButton)findViewById(R.id.send);
         input = (EditText)findViewById(R.id.input);
         messages = (ListView)findViewById(R.id.messages);
-        showOldMessages();
+        showAllOldMessages();
 
-            send.setOnClickListener(new OnClickListener() {
+            send.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             if (input.getText().toString().trim().equals("")) {
-                Toast.makeText(BarChat.this, "Enter message.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(chat.this, "Enter message", Toast.LENGTH_SHORT).show();
             } else {
                 FirebaseDatabase.getInstance()
                         .getReference()
@@ -48,12 +54,16 @@ public class BarChat extends AppCompatActivity {
     });
     }
 
-
-    public void showOldMessages() {
-        loggedInUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        FirebaseListAdapter adapter = new messageAdapter(this, message.class, R.layout.messagein,
-                FirebaseDatabase.getInstance().getReference());
-        messages.setAdapter(adapter);
+    public void showAllOldMessages() {
+        try {
+            loggedInUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+            FirebaseListAdapter adapter = new messageAdapter(this, message.class, R.layout.messagein,
+                    FirebaseDatabase.getInstance().getReference());
+            messages.setAdapter(adapter);
+        }
+        catch(DatabaseException ex){
+            ex.printStackTrace();
+        }
     }
 
     public String getLoggedInUser() {

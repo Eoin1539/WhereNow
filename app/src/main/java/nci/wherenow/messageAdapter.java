@@ -13,9 +13,9 @@ import com.google.firebase.database.DatabaseReference;
 
 public class messageAdapter extends FirebaseListAdapter<message> {
 
-    private Chat activity;
+    private chat activity;
 
-    public messageAdapter(Chat activity, Class<message> modelClass, int modelLayout, DatabaseReference ref) {
+    public messageAdapter(chat activity, Class<message> modelClass, int modelLayout, DatabaseReference ref) {
         super(activity, modelClass, modelLayout, ref);
         this.activity = activity;
     }
@@ -26,10 +26,10 @@ public class messageAdapter extends FirebaseListAdapter<message> {
         TextView messageUser = (TextView) v.findViewById(R.id.message_user);
         TextView messageTime = (TextView) v.findViewById(R.id.message_time);
 
-        messageText.setText(model.getMessageText());
-        messageUser.setText(model.getMessageUser());
+        messageText.setText(model.getText());
+        messageUser.setText(model.getUser());
 
-        messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getMessageTime()));
+        messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)", model.getTime()));
     }
 }
 

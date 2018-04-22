@@ -61,7 +61,6 @@
             android:label="@string/title_activity_social"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RestaurantChat" />
-        <activity android:name=".BarChat" />
         <activity android:name=".GalleryActivity" />
         <activity android:name=".BarGalleryActivity" />
         <activity android:name=".Privacy"></activity>
