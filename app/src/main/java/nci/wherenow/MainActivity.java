@@ -102,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    public void privacybtn(View view) {
+        Intent startNewActivity = new Intent(this, Privacy.class);
+        startActivity(startNewActivity);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
