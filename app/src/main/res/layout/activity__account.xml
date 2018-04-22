@@ -34,7 +34,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.019"
-        app:srcCompat="@drawable/restaurantbtn" />
+        app:srcCompat="@drawable/restaurantbtn"
+        android:onClick="foodbtn"/>
 
     <ImageButton
         android:id="@+id/drinkbtn"
@@ -49,7 +50,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/drinksbtn" />
+        app:srcCompat="@drawable/drinksbtn"
+        android:onClick="drinkbtn"/>
 
     <ImageButton
         android:id="@+id/mapbtn"
@@ -64,7 +66,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.575"
-        app:srcCompat="@drawable/mapsbtn" />
+        app:srcCompat="@drawable/mapsbtn"
+        android:onClick="mapbtn"/>
 
     <ImageButton
         android:id="@+id/socialbtn"
@@ -79,6 +82,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.826"
-        app:srcCompat="@drawable/chatbtn" />
+        app:srcCompat="@drawable/chatbtn"
+        android:onClick="socialbtn"/>
 
 </android.support.constraint.ConstraintLayout>
