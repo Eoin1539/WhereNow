@@ -200,6 +200,7 @@ public class GalleryActivity extends AppCompatActivity implements OnMapReadyCall
         // This would be converting the double (lat & long) to be used in a function that the map marker would reference.
 
         //LatLng restaurant = new LatLng(latitude, longitude);
+        //Hard-coding the coordinates of the restaurants within the databse.
         LatLng mcd1 = new LatLng(53.3477805,-6.2610345);
         LatLng booj1 = new LatLng(53.3488712, -6.2584623);
         LatLng start = new LatLng(53.3498056, -6.2604809);

@@ -182,5 +182,204 @@ public class BarGalleryActivity extends AppCompatActivity implements OnMapReadyC
             }
         }
 
+        //Hard-coding the coordinates of the bars within the database.
+        LatLng lago = new LatLng(53.3497424, -6.2438131);
+        LatLng molloy = new LatLng(53.3497424, -6.2438131);
+        LatLng harbour = new LatLng(53.3494549, -6.2486863);
+        LatLng madigan = new LatLng(53.3513714, -6.24911);
+        LatLng celt = new LatLng(53.3505549, -6.254878);
+        LatLng bd = new LatLng(53.3501824, -6.2503613);
+        LatLng ll = new LatLng(53.3525912, -6.249217);
+        LatLng tb = new LatLng(53.3504733, - 6.25122);
+        LatLng wf = new LatLng(53.3485314, -6.2553512);
+        LatLng central = new LatLng(53.3479796, -6.2578941);
+        LatLng cb = new LatLng(53.3492548, 6.2597914);
+        LatLng bb = new LatLng(53.3480648, -6.2633044);
+        LatLng tramline = new LatLng(53.3451242, -6.2604355);
+        LatLng temple = new LatLng(53.3459644, -6.2624744);
+        LatLng auld = new LatLng(53.3452776, -6.2633965);
+        LatLng palace = new LatLng(53.3456526, -6.2621269);
+        LatLng diceys = new LatLng(53.3361515, -6.2650107);
+        LatLng coppers = new LatLng(53.3361515, -6.2650107);
+        LatLng club = new LatLng(53.3457731, -6.2583626);
+        LatLng clubm = new LatLng(53.3457731, -6.2583626);
+        LatLng stag = new LatLng(53.3439939, -6.2633322);
+        LatLng foggy = new LatLng(53.3442414, -6.2627644);
+        LatLng buskers = new LatLng(53.3453621, -6.2630362);
+        LatLng bridge = new LatLng(53.3454213, -6.2634377);
+        LatLng river = new LatLng(53.346204, -6.2597043);
+        LatLng ryan = new LatLng(53.3501102, -6.2519421);
+        LatLng murray = new LatLng(53.3520644, -6.2607971);
+        LatLng living = new LatLng(53.3525652, -6.2611377);
+        LatLng oconnell = new LatLng(53.3475341, -6.2601529);
+        LatLng workmans = new LatLng(53.3454449, -6.2690097);
+        LatLng peadar = new LatLng(53.3451551, -6.2668893);
+        LatLng merchant = new LatLng(53.3456686, -6.261746);
+        LatLng vintage = new LatLng(53.3456686, -6.261746);
+        LatLng mint = new LatLng(53.3459736, -6.2596171);
+        LatLng yamamori = new LatLng(53.3451341, -6.2597184);
+        LatLng blind = new LatLng(53.3450178, -6.2595112);
+        LatLng dakota = new LatLng(53.3450178, -6.2595112);
+        LatLng liquor = new LatLng(53.3450178, -6.2595112);
+
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(lago)
+                .title("Lagoona Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(molloy)
+                .title("Molloy's"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(harbour)
+                .title("Harbourmaster Bar and Restaurant"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(madigan)
+                .title("Madigan's Pub Connolly Station"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(celt)
+                .title("The Celt"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(bd)
+                .title("The Brew Dock"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(ll)
+                .title("Lloyd's Bar & Lounge"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(tb)
+                .title("74 Talbot Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(wf)
+                .title("The Wiley Fox"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(central)
+                .title("The Grand Central"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(cb)
+                .title("The Confession Box"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(bb)
+                .title("Bad Bobs Temple Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(tramline)
+                .title("Tramline"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(temple)
+                .title("The Temple Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(auld)
+                .title("The Auld Dubliner"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(palace)
+                .title("The Palace Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(diceys)
+                .title("Dicey's Garden Club"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(coppers)
+                .title("Copper Face Jacks"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(club)
+                .title("Club Nassau"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(clubm)
+                .title("Club M"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(stag)
+                .title("The Stag's Head"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(foggy)
+                .title("Foggy Dew"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(buskers)
+                .title("Buskers"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(bridge)
+                .title("The Ha'penny Bridge Inn"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(river)
+                .title("River Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(ryan)
+                .title("Ryan's Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(murray)
+                .title("Murray's Pub"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(living)
+                .title("The Living Room"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(oconnell)
+                .title("O'Connell's Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(workmans)
+                .title("The Workman's Club"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(peadar)
+                .title("Peadar Kearney's"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(merchant)
+                .title("Merchant's Arch"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(vintage)
+                .title("Vintage Cocktail Club"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(mint)
+                .title("The Mint Bar"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(yamamori)
+                .title("Yamamori Tengu"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(blind)
+                .title("The Blind Pig Speakeasy"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(dakota)
+                .title("Dakota"));
+
+        googleMap.addMarker(new MarkerOptions()
+                .position(liquor)
+                .title("The Liquor Rooms"));
+
+
+
+
+
+        }
+
     }
-}
+
